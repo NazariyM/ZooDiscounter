@@ -1,0 +1,74 @@
+.c-tabs
+	$parent: &
+	&__tabs-nav
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		margin: 0 -30px
+		border-radius: 10px 10px 0 0
+		background: linear-gradient(to bottom, #516478 0%,#1a2738 100%)
+		&::after, &::before
+			position: absolute
+			bottom: -20px
+			content: ''
+		&::after
+			left: 0
+			+arr(30, 20, $black, tr)
+		&::before
+			right: 0
+			+arr(30, 20, $black, tl)
+	&__tabs-el
+		position: relative
+		display: block
+		padding: 35px 25px
+		cursor: pointer
+		color: $white
+		+f('bp900', 20)
+		line-height: 1
+		text-transform: uppercase
+		+trs
+		&::after
+			pointer-events: none
+			position: absolute
+			width: 100%
+			height: 20px
+			content: ''
+			top: -14px
+			right: 0
+			z-index: 0
+			border-radius: 10px 10px 0 0
+			transform: rotate(-4deg)
+			background: transparent
+			+trs
+		&.is-active
+			pointer-events: none
+			color: $black
+			background: $yellow
+			&::after
+				background: $yellow
+		&.is-disabled
+			pointer-events: none
+			opacity: 0.5
+			background-color: $gray
+		.no-touch &:hover
+			color: $yellow
+	&__inner
+		display: flex
+		background: $white
+	&__tabs-for
+		flex-basis: calc(100% - 255px)
+		width: calc(100% - 255px)
+	&__sidebar
+		flex-basis: 255px
+		width: 255px
+		background: $white
+	&__tab
+		display: none
+		&:first-child
+			display: block
+		&-in
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			padding-bottom: 140px

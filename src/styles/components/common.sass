@@ -1,0 +1,54 @@
+// basic styles
+body
+  min-width: 320px
+  color: $gray
+  +f('bp400', 16, 22)
+
+// selection
+h1, h2, h3, h4, h5, h6, p, a, span, div, img, mark, ul, li
+  &::selection
+    color: $white
+    background-color: $blue-dark
+
++selection
+  color: $white
+  background-color: $blue-dark
+
+// layout
+.out
+  overflow: hidden
+
+.container
+  max-width: 1260px
+  margin: 0 auto
+  padding: 0 15px
+  
+.content
+  position: relative
+  &::after
+    position: absolute
+    top: -130px
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -1
+    content: ''
+    background: url('../img/bg/page-bg.jpg')
+
+// titles
+
+.is-hidden
+  +hide-el
+
+.btn
+  padding: 0 30px
+  height: 50px
+  line-height: 50px
+  border-radius: 30px
+  color: red
+  +f('pf400')
+  background: red
+  font-size: 23px
+  +trs
+  .no-touch &:hover
+    background: darken(red, 12)

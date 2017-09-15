@@ -1,0 +1,133 @@
+.header
+	&__menu
+		padding: 10px 0
+		background-color: #131c27
+	&__container
+		display: flex
+		max-width: 1140px
+		justify-content: space-between
+	&__cab-link
+		font-size: 16px
+		border-bottom: dashed 1px rgba(#b0e2fa, .4)
+		color: $aqua-blue
+		+trs
+		.no-touch &:hover
+			border-bottom-color: $yellow
+			color: $yellow
+			.icon
+				fill: $yellow
+		.icon
+			fill: $aqua-blue
+			+trs
+	&__search
+		&-form
+			position: relative
+		input
+			padding: 0 50px 0 20px
+			height: 45px
+			border: 3px solid $aqua-blue
+			background-color: $white
+			border-radius: 10px
+			+placeholder-color($gray)
+			+f('bp300', 15)
+			+trs
+			&:focus
+				border-color: $yellow
+		&-btn
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			width: 40px
+			z-index: 1
+			text-align-last: center
+			.icon
+				font-size: 16px
+	&__info
+		&-container
+			padding: 30px 15px
+			max-width: 1140px
+		&-inner
+			margin: 0 -15px
+			font-size: 0
+			+justify
+		&-col
+			display: inline-block
+			vertical-align: middle
+	&__phones
+		&-num
+			display: block
+			+f('bp700', 25, 35)
+			color: $blue-dark
+			+trs
+			.no-touch &:hover
+				color: $yellow
+	&__basket
+		$parent: &
+		position: relative
+		display: flex
+		align-items: center
+		padding: 10px 30px
+		color: $blue-dark
+		text-align: right
+		text-align-last: right
+		border-radius: 10px
+		background: $yellow linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
+		+trs
+		z-index: 1
+		&::after
+			position: absolute
+			width: 30px
+			height: 100%
+			content: ''
+			top: 0
+			right: 0
+			z-index: 0
+			border-radius: 0 10px 10px 0
+			transform-origin: 100% 100%
+			transform: skew(-8deg)
+			background: $yellow linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
+			+trs
+		.no-touch &:hover #{$parent}-text::before
+			transform: translateY(200%)
+		&-text
+			padding-left: 10px
+			line-height: 1
+			//&::before
+			//	content: ''
+			//	position: absolute
+			//	top: -100%
+			//	left: 0
+			//	right: 10px
+			//	border-radius: 10px 0 0 10px
+			//	height: 100%
+			//	transform-origin: 100% 100%
+			//	background: $yellow linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
+			//	+trs
+		&-title
+			margin-bottom: 3px
+			font-size: 18px
+		&-status
+			+f('bp300', 14)
+		.icon
+			fill: $black
+			font-size: 48px
+
+/* ===================================
+	 nav
+	 =================================== */
+.nav
+	&__list
+		display: flex
+		li
+			&:not(:first-child)
+				margin-left: 20px
+			&.is-active a
+				pointer-events: none
+				color: $yellow
+			a
+				color: $white
+				font-size: 15px
+				+trs
+				.no-touch &:hover
+					color: $yellow

@@ -1,0 +1,110 @@
+extends ../extend/default
+
+block variables
+	- var title = 'ZooDiscounter';
+
+block main
+	main.content(data-page='home')
+		+e.container.container
+			+b.c-tabs
+				+e.tabs-nav
+					+e.tabs-el СОБАКИ
+					+e.tabs-el.is-active КОШКИ
+					+e.tabs-el ГРЫЗУНЫ
+					+e.tabs-el ПТИЦЫ
+					+e.tabs-el РЫБКИ
+				+e.inner
+
+					+b.ASIDE.sidebar.c-tabs__sidebar
+						+e.UL.menu
+							li: a(href='#!')
+								+i('present')
+								span Акции
+							li: a(href='#!')
+								+i('brand')
+								span Бренды
+							li: a(href='#!')
+								+i('novelty')
+								span Новинки
+							li: a(href='#!')
+								+i('recommend')
+								span Рекомендуем
+
+						+b.product-filter
+							+e.FORM(action='#!' method='POST')
+								+e.title ФИЛЬТР
+								+e.type
+									+e.sub-title Тип животного:
+									+e.type-inner
+										-typeList = ['_dogs', '_cats', '_rabbits', '_birds', '_fishes']
+										for typeItemMod, index in typeList
+											+e.type-item
+												+e.INPUT(id=`animal-type-${index + 1}` type='checkbox' name='animal-type')
+												+e.LABEL(for=`animal-type-${index + 1}` class=`type-icon ${typeItemMod}`)
+								+e.group
+									+e.sub-title Группа товаров:
+									+e.check
+										+e.INPUT(id='check-1' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-1') Корм
+											+e.check-square
+												+i('check')
+									+e.check
+										+e.INPUT(id='check-2' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-2') Лакомства
+											+e.check-square
+												+i('check')
+										+e.check-tooltip
+											+e.A.check-tooltip-text(href='#!') 36 товаров
+
+									+e.check
+										+e.INPUT(id='check-3' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-3') Гигиена
+											+e.check-square
+												+i('check')
+									+e.check
+										+e.INPUT(id='check-4' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-4') Наполнители
+											+e.check-square
+												+i('check')
+									+e.check
+										+e.INPUT(id='check-5' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-5') Шампуни
+											+e.check-square
+												+i('check')
+								+e.group
+									+e.sub-title Бренды:
+									+e.check
+										+e.INPUT(id='check-6' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-6') Royal Canin
+											+e.check-square
+												+i('check')
+									+e.check
+										+e.INPUT(id='check-7' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-7') Pro Plan
+											+e.check-square
+												+i('check')
+									+e.check
+										+e.INPUT(id='check-8' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-8') Gourmet
+											+e.check-square
+												+i('check')
+									+e.check
+										+e.INPUT(id='check-9' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-9') Kitekat
+											+e.check-square
+												+i('check')
+									+e.check
+										+e.INPUT(id='check-10' type='checkbox' name='')
+										+e.LABEL.check-item(for='check-10') Whiskas
+											+e.check-square
+												+i('check')
+
+								+e.prices
+									+e.sub-title Цены:
+
+					+e.tabs-for
+						+e.tab
+						+e.tab
+						+e.tab
+						+e.tab
+						+e.tab

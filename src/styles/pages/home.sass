@@ -1,0 +1,162 @@
+/* ===================================
+	 sidebar
+	 =================================== */
+.sidebar
+	&__menu
+		li
+			&:not(:first-child)
+				margin-top: 10px
+			a
+				display: inline-block
+				+f('bp700', 18)
+				line-height: 1
+				color: $blue-dark
+				text-transform: uppercase
+				.no-touch &:hover
+					color: $yellow-dark
+			.icon
+				display: inline-block
+				vertical-align: middle
+				width: 50px
+				&-present
+					font-size: 30px
+				&-brand
+					font-size: 23px
+				&-novelty
+					font-size: 29px
+				&-recommend
+					font-size: 30px
+			span
+				display: inline-block
+				vertical-align: middle
+
+/* ===================================
+	 product-filter
+	 =================================== */
+.product-filter
+	&__title
+		position: relative
+		padding: 15px
+		+f('bp900', 22)
+		color: $black
+		background: $yellow linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
+		text-transform: uppercase
+		border-radius: 10px
+		&::before
+			position: absolute
+			top: 0
+			left: 0
+			height: 20px
+			width: 100%
+			background: $yellow linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
+			content: ''
+		&::after
+			position: absolute
+			top: 0
+			right: 0
+			width: 20px
+			height: 100%
+			transform: rotate(8deg)
+			background: $yellow linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
+			
+			border-radius: 0 10px 10px 0
+			content: ''
+	&__sub-title
+		color: $blue-dark
+		+f('bp700', 16)
+	&__type
+		&-inner
+			font-size: 0
+		&-item
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			&:not(:first-child)
+				margin-left: 15px
+			input
+				display: none
+				&:checked + label::before
+					opacity: 1
+				&:checked + label::after
+					opacity: 0
+		&-icon
+			display: block
+			cursor: pointer
+			&::before, &::after
+				content: ''
+				display: block
+			&::before
+				position: absolute
+				opacity: 0
+				top: 0
+				left: 0
+			&_dogs
+				&::after
+					+s(36, 37, -5, -352)
+				&::before
+					+s(36, 37, -5, -394)
+			&_cats
+				&::after
+					+s(56, 39, -5, -72)
+				&::before
+					+s(56, 39, -5, -116)
+			&_rabbits
+				&::after
+					+s(37, 38, -5, -266)
+				&::before
+					+s(37, 38, -5, -309)
+			&_birds
+				&::after
+					+s(54, 48, -5, -160)
+				&::before
+					+s(54, 48, -5, -213)
+			&_fishes
+				&::after
+					+s(57, 31, -5, -0)
+				&::before
+					+s(57, 31, -5, -36)
+					
+	&__group
+	&__check
+		position: relative
+		$parent: &
+		input
+			display: none
+			&:checked + #{$parent}-item .icon
+				opacity: 1
+		&-item
+			display: inline-flex
+			flex-direction: row-reverse
+			align-items: center
+			+nosel
+			cursor: pointer
+		&-square
+			position: relative
+			display: block
+			width: 20px
+			height: 20px
+			margin-right: 9px
+			border: 2px solid #ebebeb
+			background: $white
+			.icon
+				position: absolute
+				top: 0
+				right: 0
+				font-size: 11px
+				opacity: 0
+				pointer-events: none
+		&-tooltip
+			position: absolute
+			top: 50%
+			margin-top: -20px
+			right: 20px
+			padding: 9px 0
+			min-width: 96px
+			z-index: 1
+			background: url('../img/bg/check-tooltip.png') no-repeat 50% 50%/cover
+			text-align: center
+			&-text
+				+f('bp500', 13)
+				line-height: 1
+				color: $blue
+				text-decoration: underline

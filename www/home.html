@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZooDiscounter</title>
+    <link href="static/css/index.css" rel="stylesheet">
+    <link rel="icon" href="static/favicon.ico">
+  </head>
+  <body>
+    <!-- SVG-->
+    <div class="svg-container" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="a" x1="260" x2="260" y1="457.34" y2="434.34" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e19c00" stop-opacity="0" />
+            <stop offset="1" stop-color="#e19c00" stop-opacity=".15" />
+          </linearGradient>
+          <linearGradient id="a" x1="260.06" x2="260.06" y1="510.06" y2="481.06" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e19c00" stop-opacity="0" />
+            <stop offset="1" stop-color="#e19c00" stop-opacity=".15" />
+          </linearGradient>
+          <linearGradient id="a" x1="259.5" x2="259.5" y1="410" y2="380" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e19c00" stop-opacity="0" />
+            <stop offset="1" stop-color="#e19c00" stop-opacity=".15" />
+          </linearGradient>
+          <linearGradient id="a" x1="260" x2="260" y1="558" y2="528" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e19c00" stop-opacity="0" />
+            <stop offset="1" stop-color="#e19c00" stop-opacity=".15" />
+          </linearGradient>
+        </defs>
+        <symbol id="icon-brand" viewBox="0 0 32 24">
+          <path d="M9.1 22.68c.9.88 2.35.88 3.25 0l11.16-10.93c.32-.32.56-.7.72-1.1 1.12.32 2.22.48 3.18.47 2.37 0 3.16-1.03 3.42-1.64.26-.6.44-1.87-1.22-3.54l-.06-.05a13.38 13.38 0 0 0-4.24-2.65l-.94-.35v-.02A2.5 2.5 0 0 0 21.88.43L15.2.34a3.28 3.28 0 0 0-2.36.95L1.67 12.22c-.9.88-.9 2.32 0 3.2zm8.6-18.42a1.94 1.94 0 0 1 2.69 0c.44.43.62 1.03.54 1.6a13.44 13.44 0 0 0 3.5 1.7l-.04-2.63.16.07a11.64 11.64 0 0 1 3.66 2.27c.8.8.89 1.32.82 1.47-.21.5-2.46.93-5.87-.47-1-.4-1.94-.92-2.7-1.47l-.08.1c-.74.73-1.95.73-2.7 0a1.84 1.84 0 0 1 .01-2.64z"
+          />
+          <path d="M253.1 456.68c.9.88 2.35.88 3.25 0l11.16-10.94c.32-.3.56-.68.72-1.08 1.12.3 2.22.47 3.18.46 2.37 0 3.16-1.03 3.42-1.64.26-.6.44-1.87-1.22-3.54l-.06-.05a13.38 13.38 0 0 0-4.24-2.65l-.94-.35v-.02a2.5 2.5 0 0 0-2.49-2.44l-6.68-.09a3.28 3.28 0 0 0-2.36.95l-11.17 10.93c-.9.88-.9 2.32 0 3.2zm8.6-18.42a1.94 1.94 0 0 1 2.69 0c.44.43.62 1.03.54 1.6a13.44 13.44 0 0 0 3.5 1.7l-.04-2.63.16.07a11.64 11.64 0 0 1 3.66 2.27c.8.8.89 1.32.82 1.47-.21.5-2.46.93-5.87-.47-1-.4-1.94-.92-2.7-1.47l-.08.1c-.74.73-1.95.73-2.7 0a1.84 1.84 0 0 1 .01-2.64z"
+            transform="translate(-244 -434)" />
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 17 13">
+          <path d="M16 3.05L13.75.99 6.3 8.01 2.2 4.16 0 6.2l6.31 5.81z" />
+        </symbol>
+        <symbol id="icon-feeder" viewBox="0 0 51 48">
+          <path d="M50.99 31.98l-2.43-16.23c-.04-4.71-2.92-9.08-7.92-12C36.51 1.33 31.13 0 25.5 0c-5.63 0-11.01 1.33-15.14 3.75-5 2.92-7.88 7.29-7.92 12L.01 31.98l-.01.17c0 4.77 3.2 9.2 8.78 12.13C13.35 46.68 19.29 48 25.5 48c6.21 0 12.15-1.32 16.72-3.72C47.8 41.34 51 36.92 51 32.15l-.01-.17zM11.53 5.74C15.32 3.52 20.28 2.3 25.5 2.3c5.22 0 10.18 1.21 13.97 3.43 4.3 2.51 6.77 6.2 6.77 10.1 0 3.92-2.47 7.6-6.77 10.12-3.79 2.21-8.75 3.43-13.97 3.43-5.22 0-10.18-1.22-13.97-3.43-4.3-2.51-6.77-6.2-6.77-10.11 0-3.91 2.47-7.6 6.77-10.11zm29.61 36.5c-4.24 2.23-9.8 3.45-15.64 3.45s-11.4-1.22-15.64-3.45c-4.76-2.5-7.5-6.15-7.54-10l1.6-10.67a16.72 16.72 0 0 0 6.44 6.38c4.13 2.42 9.51 3.75 15.14 3.75 5.63 0 11.01-1.33 15.14-3.75 2.92-1.7 5.11-3.9 6.44-6.38l1.6 10.66c-.04 3.86-2.78 7.5-7.54 10zM25.5 27.09c7.95 0 14.97-3.06 17.46-7.61.64-1.16.96-2.39.96-3.63 0-3.12-2-6-5.63-8.13-3.43-2-7.98-3.1-12.79-3.1-4.81 0-9.36 1.1-12.79 3.1-3.63 2.12-5.63 5.01-5.63 8.13 0 1.24.32 2.47.96 3.63 2.49 4.55 9.51 7.6 17.46 7.6zm0-2.3c-6.67 0-12.73-2.39-15.08-5.86 2.35-3.48 8.41-5.86 15.08-5.86s12.73 2.38 15.08 5.86c-2.35 3.47-8.41 5.85-15.08 5.85zM9.4 15.84c0-2.27 1.59-4.45 4.48-6.14 3.09-1.8 7.21-2.8 11.62-2.8 4.41 0 8.53 1 11.62 2.8 2.89 1.69 4.48 3.87 4.48 6.14 0 .2-.01.4-.04.6-3.2-3.46-9.29-5.68-16.06-5.68s-12.86 2.22-16.06 5.68c-.03-.2-.04-.4-.04-.6zm10.9 2.65h-.36c-.64 0-1.16.52-1.16 1.15 0 .64.52 1.16 1.16 1.16h.36a1.16 1.16 0 0 0 0-2.3zm13.76 0h-8.27c-.64 0-1.16.52-1.16 1.15 0 .64.52 1.16 1.16 1.16h8.27a1.16 1.16 0 0 0 0-2.3z"
+          />
+        </symbol>
+        <symbol id="icon-loupe" viewBox="0 0 17 17">
+          <path d="M16.36 14.62l-3.3-3.3a6.59 6.59 0 0 0 1.2-3.83 6.78 6.78 0 0 0-4.14-6.24 6.65 6.65 0 0 0-5.26 0 6.75 6.75 0 0 0 2.63 13c1.4 0 2.69-.39 3.84-1.19l3.3 3.3c.22.24.51.36.86.36.33 0 .62-.12.86-.37.25-.24.37-.53.37-.86 0-.34-.12-.63-.36-.87zm-5.83-4.09A4.15 4.15 0 0 1 7.5 11.8c-1.19 0-2.2-.43-3.05-1.27A4.15 4.15 0 0 1 3.18 7.5c0-1.19.42-2.2 1.26-3.05A4.15 4.15 0 0 1 7.5 3.18c1.18 0 2.2.42 3.04 1.26A4.15 4.15 0 0 1 11.8 7.5c0 1.18-.43 2.2-1.27 3.04z"
+          />
+        </symbol>
+        <symbol id="icon-novelty" viewBox="0 0 31 30">
+          <path d="M29.87 15.87l-2.2-3.43c-.18-.27-.24-.6-.17-.91l.88-3.96a1.22 1.22 0 0 0-.85-1.43L23.6 4.9c-.31-.1-.58-.31-.73-.6L20.94.72c-.3-.56-.98-.8-1.58-.57L15.54 1.7c-.3.12-.65.12-.95 0L10.76.15c-.6-.23-1.28 0-1.58.57L7.25 4.3c-.15.29-.41.5-.72.6L2.59 6.14c-.61.2-.98.8-.84 1.43l.87 3.96c.07.31.01.64-.16.91l-2.2 3.43c-.35.54-.22 1.24.29 1.63l3.27 2.48c.25.2.43.48.47.8l.56 4.02c.09.62.65 1.08 1.29 1.06l4.13-.16c.33-.01.65.1.89.32l3.06 2.72c.48.43 1.2.43 1.68 0l3.07-2.72c.24-.22.56-.33.89-.32l4.13.16c.64.02 1.2-.44 1.29-1.06l.56-4.02c.04-.32.21-.6.47-.8l3.27-2.48c.5-.4.63-1.1.29-1.63z"
+          />
+          <path d="M274.87 496.87l-2.2-3.43c-.18-.27-.24-.6-.17-.91l.88-3.96a1.22 1.22 0 0 0-.85-1.43l-3.93-1.24c-.31-.1-.58-.31-.73-.6l-1.93-3.58c-.3-.56-.98-.8-1.58-.57l-3.82 1.54c-.3.12-.65.12-.95 0l-3.83-1.54c-.6-.23-1.28 0-1.58.57l-1.93 3.58c-.15.29-.41.5-.72.6l-3.94 1.24c-.61.2-.98.8-.84 1.43l.87 3.96c.07.31.01.64-.16.91l-2.2 3.43c-.35.54-.22 1.24.29 1.63l3.27 2.48c.25.2.43.48.47.8l.56 4.02c.09.62.65 1.08 1.29 1.06l4.13-.16c.33-.01.65.1.89.32l3.06 2.72c.48.43 1.2.43 1.68 0l3.07-2.72c.24-.22.56-.33.89-.32l4.13.16c.64.02 1.2-.44 1.29-1.06l.56-4.02c.04-.32.21-.6.47-.8l3.27-2.48c.5-.4.63-1.1.29-1.63z"
+            transform="translate(-245 -481)" />
+        </symbol>
+        <symbol id="icon-present" viewBox="0 0 29 30">
+          <path d="M16.22 17.96V30h9.74c1.27 0 2.3-1.04 2.3-2.33v-9.71zm-3.44 0H.75v9.7A2.31 2.31 0 0 0 3.04 30h9.74zM26.7 8.83h-4.3a5.3 5.3 0 0 0 1.39-.9 4.68 4.68 0 0 0 0-6.53 4.5 4.5 0 0 0-6.43 0c-.74.75-1.45 2.6-2.02 4.5a3.13 3.13 0 0 0-.85-.12c-.29 0-.56.05-.83.12-.59-1.92-1.3-3.8-2.04-4.55a4.49 4.49 0 0 0-6.43 0 4.68 4.68 0 0 0 0 6.53c.32.33.85.65 1.5.95H2.3A2.31 2.31 0 0 0 0 11.16v1.98a2.31 2.31 0 0 0 2.3 2.33h10.48V8.92h3.44v6.55h10.49c1.26 0 2.29-1.04 2.29-2.33v-1.98a2.31 2.31 0 0 0-2.3-2.33zm-7.72-5.78a2.21 2.21 0 0 1 3.18 0c.43.43.66 1 .66 1.62 0 .6-.23 1.18-.65 1.61-.48.46-2.34 1.16-4.63 1.82a3.15 3.15 0 0 0-.27-.64c.63-2.2 1.28-3.95 1.71-4.4zM6.82 3A2.21 2.21 0 0 1 10 3c.43.47 1.1 2.24 1.73 4.46-.1.19-.19.4-.25.6C9.17 7.4 7.3 6.7 6.82 6.23a2.31 2.31 0 0 1 0-3.23z"
+          />
+          <path d="M261.22 397.96V410h9.74c1.27 0 2.3-1.04 2.3-2.33v-9.71zm-3.44 0h-12.03v9.7a2.31 2.31 0 0 0 2.29 2.34h9.74zm13.93-9.13h-4.3a5.3 5.3 0 0 0 1.39-.9 4.68 4.68 0 0 0 0-6.53 4.5 4.5 0 0 0-6.43 0c-.74.75-1.45 2.6-2.02 4.5a3.13 3.13 0 0 0-.85-.12c-.29 0-.56.05-.83.12-.59-1.92-1.3-3.8-2.04-4.55a4.49 4.49 0 0 0-6.43 0 4.68 4.68 0 0 0 0 6.53c.32.33.85.65 1.5.95h-4.4a2.31 2.31 0 0 0-2.3 2.33v1.98a2.31 2.31 0 0 0 2.3 2.33h10.48v-6.55h3.44v6.55h10.49c1.26 0 2.29-1.04 2.29-2.33v-1.98a2.31 2.31 0 0 0-2.3-2.33zm-7.72-5.78a2.21 2.21 0 0 1 3.18 0c.43.43.66 1 .66 1.62 0 .6-.23 1.18-.65 1.61-.48.46-2.34 1.16-4.63 1.82a3.15 3.15 0 0 0-.27-.64c.63-2.2 1.29-3.95 1.71-4.4zm-12.17-.05a2.21 2.21 0 0 1 3.18 0c.43.47 1.1 2.24 1.73 4.46-.1.19-.19.4-.25.6-2.31-.66-4.18-1.37-4.66-1.83a2.31 2.31 0 0 1 0-3.23z"
+            transform="translate(-245 -380)" />
+        </symbol>
+        <symbol id="icon-recommend" viewBox="0 0 26 30">
+          <path d="M23.63 16.58A2.3 2.3 0 0 0 26 14.32c.05-1.3-.83-2.48-2.08-2.54l-8.32-1.07s1.73-2.97 1.73-7.38C17.33.4 15.3 0 14.08 0c-.94 0-1.2 1.88-1.2 1.88-.21 1.2-.5 2.26-1.46 4.2-1.09 2.17-2.57 1.97-4.3 3.9a10.07 10.07 0 0 0-1.2 1.76l-.12.23-.2.38c-1.06 1.1-2.72.98-3.43.98-1.43 0-2.17.85-2.17 2.22v10.16c0 1.54.61 2.06 2.17 2.06h2.16c1.1 0 1.95.64 3.25 1.11 1.8.64 4.46 1.12 9.06 1.12h3.3a2.6 2.6 0 0 0 1.82-.79c.17-.16.34-.4.42-.87l.02-.41c.06-1.34-.73-1.82-1.17-1.97.01 0 0-.02.03-.01l1.4.06c1.26.06 2.5-.87 2.5-2.44 0-1.3-1.03-2.23-2.28-2.29l.75.03a2.31 2.31 0 0 0 2.37-2.26 2.33 2.33 0 0 0-2.17-2.47z"
+          />
+          <path d="M270.63 544.58a2.3 2.3 0 0 0 2.37-2.26c.05-1.3-.83-2.48-2.08-2.54l-8.32-1.07s1.73-2.97 1.73-7.38c0-2.94-2.04-3.33-3.25-3.33-.94 0-1.2 1.88-1.2 1.88-.21 1.2-.5 2.26-1.46 4.2-1.09 2.17-2.57 1.97-4.3 3.9a10.07 10.07 0 0 0-1.2 1.76l-.12.23-.2.38c-1.06 1.1-2.72.98-3.43.98-1.43 0-2.17.85-2.17 2.22v10.16c0 1.54.61 2.06 2.17 2.06h2.16c1.1 0 1.95.64 3.25 1.11 1.8.64 4.46 1.12 9.06 1.12h3.3a2.6 2.6 0 0 0 1.82-.79c.17-.16.34-.4.42-.87l.02-.41c.06-1.34-.73-1.82-1.17-1.97.01 0 0-.02.03-.01l1.4.06c1.26.06 2.5-.87 2.5-2.44 0-1.3-1.03-2.23-2.28-2.29l.75.03a2.31 2.31 0 0 0 2.37-2.26 2.33 2.33 0 0 0-2.17-2.47z"
+            transform="translate(-247 -528)" />
+        </symbol>
+        <symbol id="icon-user" viewBox="0 0 15 21">
+          <path d="M13.37 15.3l-3.11-1.6a.89.89 0 0 1-.48-.78v-1.13l.24-.32c.4-.58.72-1.23.96-1.93.46-.22.76-.68.76-1.2V7c0-.32-.12-.63-.33-.88V4.35c.02-.18.09-1.27-.68-2.17C10.06 1.4 8.97 1 7.5 1s-2.56.4-3.23 1.18c-.77.9-.7 1.99-.68 2.17v1.77c-.21.25-.33.56-.33.88v1.33c0 .4.18.79.49 1.04.3 1.2.92 2.12 1.14 2.41v1.1c0 .33-.17.62-.45.78l-2.91 1.62A3.03 3.03 0 0 0 0 17.92V19c0 1.58 4.91 2 7.5 2s7.5-.42 7.5-2v-1.01c0-1.15-.62-2.18-1.63-2.7z"
+          />
+        </symbol>
+        <symbol id="icon-vintage-logo" viewBox="0 0 84.1 115.5">
+          <style>
+            .st0 {
+              fill: #000
+            }
+          </style>
+          <path d="M21.7 0H0l5.1 19.8h21.5z" />
+          <path d="M63.2 0L33.7 115.5h21L84.1 0z" />
+        </symbol>
+      </svg>
+    </div>
+    <!-- picture element HTML5 shiv-->
+    <script>
+      document.createElement('picture');
+    </script>
+    <!-- Header-->
+    <header class="header">
+      <div class="header__menu">
+        <div class="header__container container">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li>
+                <a href="#!">О нас</a>
+              </li>
+              <li class="is-active">
+                <a href="#!">Контакты</a>
+              </li>
+              <li>
+                <a href="#!">Магазины / Пункты выдачи</a>
+              </li>
+              <li>
+                <a href="#!">Доставка</a>
+              </li>
+              <li>
+                <a href="#!">Условия возврата</a>
+              </li>
+              <li>
+                <a href="#!">Жалобы и предложения</a>
+              </li>
+            </ul>
+          </nav>
+          <a class="header__cab-link" href="#!">
+            <svg class="icon icon-user">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-user"></use>
+            </svg>
+            <span>Личный кабинет</span>
+          </a>
+        </div>
+      </div>
+      <div class="header__info-container container">
+        <div class="header__info-inner">
+          <div class="header__info-col">
+            <a class="header__logo" href="#!">
+              <img src="static/img/logo.png" alt="ZooDiscounter" title="" />
+            </a>
+          </div>
+          <div class="header__info-col">
+            <div class="header__search">
+              <form class="header__search-form" action="#!" method="POST">
+                <input type="text" placeholder="Поиск по сайту" name="" />
+                <button class="header__search-btn" type="submit">
+                  <svg class="icon icon-loupe">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-loupe"></use>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="header__info-col">
+            <div class="header__phones">
+              <a class="header__phones-num" href="tel:88462672575">8 846 267-25-75</a>
+              <a class="header__phones-num" href="tel:89053002575">8 905 300-25-75</a>
+            </div>
+          </div>
+          <div class="header__info-col">
+            <a class="header__basket" href="#!">
+              <svg class="icon icon-feeder">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-feeder"></use>
+              </svg>
+              <span class="header__basket-text">
+                <h5 class="header__basket-title">Ваша корзина</h5>
+                <span class="header__basket-status">в корзине пусто :(</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main content-->
+    <main class="content" data-page="home">
+      <div class="container container">
+        <div class="c-tabs">
+          <div class="c-tabs__tabs-nav">
+            <div class="c-tabs__tabs-el">СОБАКИ</div>
+            <div class="c-tabs__tabs-el is-active">КОШКИ</div>
+            <div class="c-tabs__tabs-el">ГРЫЗУНЫ</div>
+            <div class="c-tabs__tabs-el">ПТИЦЫ</div>
+            <div class="c-tabs__tabs-el">РЫБКИ</div>
+          </div>
+          <div class="c-tabs__inner">
+            <aside class="sidebar c-tabs__sidebar">
+              <ul class="sidebar__menu">
+                <li>
+                  <a href="#!">
+                    <svg class="icon icon-present">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-present"></use>
+                    </svg>
+                    <span>Акции</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <svg class="icon icon-brand">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-brand"></use>
+                    </svg>
+                    <span>Бренды</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <svg class="icon icon-novelty">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-novelty"></use>
+                    </svg>
+                    <span>Новинки</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <svg class="icon icon-recommend">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-recommend"></use>
+                    </svg>
+                    <span>Рекомендуем</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="product-filter">
+                <form action="#!" method="POST">
+                  <div class="product-filter__title">ФИЛЬТР</div>
+                  <div class="product-filter__type">
+                    <div class="product-filter__sub-title">Тип животного:</div>
+                    <div class="product-filter__type-inner">
+                      <div class="product-filter__type-item">
+                        <input id="animal-type-1" type="checkbox" name="animal-type" />
+                        <label class="product-filter__type-icon product-filter__type-icon_dogs" for="animal-type-1"></label>
+                      </div>
+                      <div class="product-filter__type-item">
+                        <input id="animal-type-2" type="checkbox" name="animal-type" />
+                        <label class="product-filter__type-icon product-filter__type-icon_cats" for="animal-type-2"></label>
+                      </div>
+                      <div class="product-filter__type-item">
+                        <input id="animal-type-3" type="checkbox" name="animal-type" />
+                        <label class="product-filter__type-icon product-filter__type-icon_rabbits" for="animal-type-3"></label>
+                      </div>
+                      <div class="product-filter__type-item">
+                        <input id="animal-type-4" type="checkbox" name="animal-type" />
+                        <label class="product-filter__type-icon product-filter__type-icon_birds" for="animal-type-4"></label>
+                      </div>
+                      <div class="product-filter__type-item">
+                        <input id="animal-type-5" type="checkbox" name="animal-type" />
+                        <label class="product-filter__type-icon product-filter__type-icon_fishes" for="animal-type-5"></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-filter__group">
+                    <div class="product-filter__sub-title">Группа товаров:</div>
+                    <div class="product-filter__check">
+                      <input id="check-1" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-1">Корм
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="product-filter__check">
+                      <input id="check-2" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-2">Лакомства
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                      <div class="product-filter__check-tooltip">
+                        <a class="product-filter__check-tooltip-text" href="#!">36 товаров</a>
+                      </div>
+                    </div>
+                    <div class="product-filter__check">
+                      <input id="check-3" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-3">Гигиена
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="product-filter__check">
+                      <input id="check-4" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-4">Наполнители
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="product-filter__check">
+                      <input id="check-5" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-5">Шампуни
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="product-filter__group">
+                    <div class="product-filter__sub-title">Бренды:</div>
+                    <div class="product-filter__check">
+                      <input id="check-6" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-6">Royal Canin
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="product-filter__check">
+                      <input id="check-7" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-7">Pro Plan
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="product-filter__check">
+                      <input id="check-8" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-8">Gourmet
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="product-filter__check">
+                      <input id="check-9" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-9">Kitekat
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="product-filter__check">
+                      <input id="check-10" type="checkbox" name="" />
+                      <label class="product-filter__check-item" for="check-10">Whiskas
+                        <span class="product-filter__check-square">
+                          <svg class="icon icon-check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="product-filter__prices">
+                    <div class="product-filter__sub-title">Цены:</div>
+                  </div>
+                </form>
+              </div>
+            </aside>
+            <div class="c-tabs__tabs-for">
+              <div class="c-tabs__tab"></div>
+              <div class="c-tabs__tab"></div>
+              <div class="c-tabs__tab"></div>
+              <div class="c-tabs__tab"></div>
+              <div class="c-tabs__tab"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer-->
+    <!-- Scripts-->
+    <script src="static/js/index.jquery.js"></script>
+    <script src="static/js/index.js"></script>
+  </body>
+</html>

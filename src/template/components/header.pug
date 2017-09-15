@@ -1,0 +1,43 @@
++b.HEADER.header
+	+e.menu
+		+e.container.container
+			+b.NAV.nav
+				+e.UL.list
+					-
+						navList = [
+						'О нас',
+						'Контакты',
+						'Магазины / Пункты выдачи',
+						'Доставка',
+						'Условия возврата',
+						'Жалобы и предложения'
+						]
+					for navLink, index in navList
+						-activeIndex = 2
+						li(class= index === activeIndex - 1 ? 'is-active' : ''): a(href='#!')= navLink
+
+			+e.A.cab-link(href='#!')
+				+i('user')
+				+e.SPAN Личный кабинет
+
+	+e.info-container.container
+		+e.info-inner
+			+e.info-col
+				+e.A.logo(href='#!')
+					+e.IMG(src='static/img/logo.png' alt='ZooDiscounter')
+			+e.info-col
+				+e.search
+					+e.FORM.search-form(action='#!' method='POST')
+						+e.INPUT(type='text' placeholder='Поиск по сайту' name='')
+						+e.BUTTON.search-btn(type='submit')
+							+i('loupe')
+			+e.info-col
+				+e.phones
+					+e.A.phones-num(href='tel:88462672575') 8 846 267-25-75
+					+e.A.phones-num(href='tel:89053002575') 8 905 300-25-75
+			+e.info-col
+				+e.A.basket(href='#!')
+					+i('feeder')
+					+e.basket-text
+						+e.H5.basket-title Ваша корзина
+						+e.SPAN.basket-status в корзине пусто :(
