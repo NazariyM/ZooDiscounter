@@ -2,6 +2,8 @@ import './noTouch';
 import CTabs from './c-tabs';
 import Dot from './initDot';
 import objectFitImages from 'object-fit-images';
+import ionRangeSlider from 'ion-rangeslider';
+
 /**
  * Website's common scripts.
  *
@@ -46,6 +48,18 @@ const $tabs = $('.c-tabs');
 $tabs.each((index, el) => {
   const tab = new CTabs($(el));
   tab.init();
+});
+
+/** price filter range */
+const $rangeSlider = $('.js-filter-range');
+const $resetRangeSld = $('.js-reset-range');
+$rangeSlider.ionRangeSlider({
+  type: 'double',
+  hide_min_max: true
+});
+const $rangeDataReset = $rangeSlider.data('ionRangeSlider');
+$resetRangeSld.on('click', function () {
+  $rangeDataReset.reset();
 });
 
 /** Export initialized common scripts by default */

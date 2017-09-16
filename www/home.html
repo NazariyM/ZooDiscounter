@@ -207,7 +207,7 @@
               </ul>
               <div class="product-filter">
                 <form action="#!" method="POST">
-                  <div class="product-filter__title">ФИЛЬТР</div>
+                  <h3 class="product-filter__title title-bg">ФИЛЬТР</h3>
                   <div class="product-filter__type">
                     <div class="product-filter__sub-title">Тип животного:</div>
                     <div class="product-filter__type-inner">
@@ -302,7 +302,7 @@
                       </label>
                     </div>
                     <div class="product-filter__check">
-                      <input id="check-7" type="checkbox" name="" />
+                      <input id="check-7" type="checkbox" name="" checked="checked" />
                       <label class="product-filter__check-item" for="check-7">Pro Plan
                         <span class="product-filter__check-square">
                           <svg class="icon icon-check">
@@ -322,7 +322,7 @@
                       </label>
                     </div>
                     <div class="product-filter__check">
-                      <input id="check-9" type="checkbox" name="" />
+                      <input id="check-9" type="checkbox" name="" checked="checked" />
                       <label class="product-filter__check-item" for="check-9">Kitekat
                         <span class="product-filter__check-square">
                           <svg class="icon icon-check">
@@ -344,6 +344,13 @@
                   </div>
                   <div class="product-filter__prices">
                     <div class="product-filter__sub-title">Цены:</div>
+                    <div class="product-filter__prices-range">
+                      <input class="js-filter-range" type="text" name="" value="" data-min="0" data-max="5000" data-from="150" data-to="1500" data-step="50" />
+                    </div>
+                    <div class="product-filter__actions">
+                      <button class="product-filter__actions-btn btn btn_yellow js-reset-range" type="reset">СБРОСИТЬ</button>
+                      <button class="product-filter__actions-btn btn btn_blue" type="submit">Показать</button>
+                    </div>
                   </div>
                 </form>
               </div>

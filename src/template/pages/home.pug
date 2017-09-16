@@ -32,7 +32,8 @@ block main
 
 						+b.product-filter
 							+e.FORM(action='#!' method='POST')
-								+e.title ФИЛЬТР
+								+e.H3.title.title-bg ФИЛЬТР
+
 								+e.type
 									+e.sub-title Тип животного:
 									+e.type-inner
@@ -79,7 +80,7 @@ block main
 											+e.check-square
 												+i('check')
 									+e.check
-										+e.INPUT(id='check-7' type='checkbox' name='')
+										+e.INPUT(id='check-7' type='checkbox' name='' checked)
 										+e.LABEL.check-item(for='check-7') Pro Plan
 											+e.check-square
 												+i('check')
@@ -89,7 +90,7 @@ block main
 											+e.check-square
 												+i('check')
 									+e.check
-										+e.INPUT(id='check-9' type='checkbox' name='')
+										+e.INPUT(id='check-9' type='checkbox' name='' checked)
 										+e.LABEL.check-item(for='check-9') Kitekat
 											+e.check-square
 												+i('check')
@@ -101,6 +102,12 @@ block main
 
 								+e.prices
 									+e.sub-title Цены:
+									+e.prices-range
+										+b.INPUT.js-filter-range(type='text' name='' value='' data-min='0' data-max='5000' data-from='150' data-to='1500' data-step='50')
+
+									+e.actions
+										+e.BUTTON.actions-btn.btn._yellow.js-reset-range(type='reset') СБРОСИТЬ
+										+e.BUTTON.actions-btn.btn._blue(type='submit') Показать
 
 					+e.tabs-for
 						+e.tab
