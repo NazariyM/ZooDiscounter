@@ -289,10 +289,38 @@
 	flex-basis: calc(33.333333% - 30px)
 	width: calc(33.333333% - 30px)
 	margin: 0 15px 30px
-	padding: 24px 24px 35px
-	border-radius: 10px
-	border: 1px solid #ebebeb
 	text-align: center
+	&::before, &::after
+		content: ''
+		+coverdiv
+		border-radius: 10px
+		+trs
+	&::before
+		border: 1px solid #ebebeb
+		background: $white
+		z-index: 1
+	&::after
+		border: 2px solid #7fb4d5
+		background: transparent
+		visibility: hidden
+		z-index: 0
+	.no-touch &:hover::before
+		top: -15px
+		left: -15px
+		right: -15px
+		bottom: -15px
+		transform: perspective(600px) rotateY(-10deg)
+	.no-touch &:hover::after
+		visibility: visible
+		top: -25px
+		left: -15px
+		right: -30px
+		bottom: -10px
+		transform: perspective(600px) rotateY(10deg) rotateX(6deg)
+	&__inner
+		position: relative
+		z-index: 1
+		padding: 24px 24px 35px
 	&__img-wrap
 		height: 184px
 	&__data
@@ -366,7 +394,7 @@
 	 assortment
 	 =================================== */
 .assortment
-	padding: 0 0 30px
+	padding: 0 15px 30px
 	&__inner
 		display: flex
 		justify-content: space-between
@@ -374,6 +402,10 @@
 		position: relative
 		+f('bp900')
 		text-transform: uppercase
+		transition: transform .3s ease-in-out
+		+gpu
+		.no-touch &:hover
+			transform: perspective(600px) rotateY(-15deg)
 		&-text
 			position: absolute
 			left: 44px
@@ -391,13 +423,17 @@
 	 about-text
 	 =================================== */
 .about-text
-	padding: 40px 0 55px
+	padding: 25px 15px 55px
 	&__inner
 	&__title
-		margin-bottom: 30px
-		+f('bp700', 30)
+		max-width: 800px
+		margin-bottom: 26px
+		+f('bp700', 30, 30)
+		letter-spacing: .02em
 		text-transform: uppercase
 		color: #131c27
 	&__descr
+		p
+			line-height: 24px
 		p + p
-			margin-top: 20px
+			margin-top: 25px

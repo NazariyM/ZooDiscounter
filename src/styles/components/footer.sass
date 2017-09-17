@@ -1,5 +1,5 @@
 .footer
-	padding: 45px 0
+	padding: 42px 0
 	background: $blue-dark
 	&__container
 		max-width: 1140px
@@ -7,17 +7,27 @@
 	&__info
 		display: flex
 		align-items: flex-end
-		margin: 0 -15px
+		margin-top: 18px
 		&-col
-			padding: 0 15px
+			flex: 1 1 auto
+			&:not(:last-child)
+				padding-right: 40px
+			&:nth-child(1)
+				flex-shrink: 0
+			&:nth-child(4)
+				flex-shrink: 0
 		&-title
 			color: rgba($white, .5)
 			+f('bp700', 15, 25)
+			letter-spacing: .02em
 			text-transform: uppercase
 			
+	&__logo
+		display: inline-block
+		margin-bottom: 20px
 	&__copy
 		color: rgba(#e4f3f9, .5)
-		+f('bp300', 13)
+		+f('bp300', 13, 15)
 	&__mail
 		font-size: 16px
 		color: #ffdc36
@@ -30,13 +40,24 @@
 	----------------------------------- */
 .dev-block
 	&__link
+		display: inline-flex
+		align-items: center
 		text-transform: uppercase
 		color: #5cbbf7
-		border-bottom: 1px solid rgba(#5cbbf7, .6)
-		+trs
-		.no-touch &:hover
+		&::after
+			display: block
+			margin-left: 9px
+			width: 16px
+			height: 20px
+			background: url("../img/bg/dev.png") no-repeat
+			content: ''
+		span
+			border-bottom: 1px solid rgba(#5cbbf7, .6)
+			+trs
+		.no-touch &:hover span
 			border-bottom-color: #5cbbf7
 	&__text
+		white-space: nowrap
 		color: $white
 		font-size: 14px
 		
@@ -66,7 +87,7 @@
 			background: rgba(#ffdc36, .5)
 			content: ''
 		&:not(:first-child)
-			margin-left: 25px
+			margin-left: 27px
 		&:last-child::after
 			display: none
 		.icon
@@ -84,17 +105,20 @@
 	 pay-method
 	 =================================== */
 .pay-method
+	display: flex
+	align-items: center
 	&__item
 		position: relative
 		display: inline-flex
 		align-items: center
 		justify-content: center
 		height: 28px
+		font-size: 0
 		&::after
 			pointer-events: none
 			position: absolute
-			top: 3px
-			right: -12px
+			top: 0
+			right: -14px
 			height: 26px
 			width: 1px
 			transform: rotate(30deg)
@@ -108,3 +132,7 @@
 			fill: $yellow
 		.icon
 			+trs
+			&-visa
+				font-size: 14px
+			&-mc
+				font-size: 20px

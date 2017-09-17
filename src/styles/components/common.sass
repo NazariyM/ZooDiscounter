@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, img, mark, ul, li
   box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.25)
   border-radius: 10px
   text-align: center
-  +trs
+  transition: all 0.1s cubic-bezier(0.4, 0, 1, 1)
   +f('bp700', 15)
   text-transform: uppercase
   &_yellow
@@ -61,7 +61,10 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, img, mark, ul, li
   &_blue
     background: #0069ab linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
     color: $white
-    
+  .no-touch &:active
+    transform: translate(2px, 2px)
+    box-shadow: none
+
 .title-bg
   position: relative
   display: inline-block
