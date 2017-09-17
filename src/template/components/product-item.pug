@@ -1,0 +1,30 @@
+if productItem ? productItem : productItem = []
+
+mixin productItem(item)
+	+b.product-item
+		+e.img-wrap
+			+e.IMG(src=`static/img/content/${item.img}.jpg` alt='image')
+		+e.data
+			+e.A.name(href='#!')= item.name
+			+e.P.descr= item.descr
+		+e.info
+			+e.info-row
+				+e.SPAN.weight 15кг
+				+e.SPAN.price 490 р.
+				+e.SPAN.price-old 520 р.
+				+e.A.cart-add(href='#!')
+					+i('cart')
+			+e.info-row
+				+e.SPAN.weight 15кг
+				+e.SPAN.price 490 р.
+				+e.SPAN.price-old 520 р.
+				+e.A.cart-add(href='#!')
+					+i('cart')
+		if item.promo
+			+e.label._promo
+				+i('present-sm')
+		if item.novelty
+			+e.label._new
+				+i('novelty')
+each item in productList
+	+productItem(item)

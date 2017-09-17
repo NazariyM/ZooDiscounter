@@ -1,0 +1,110 @@
+.footer
+	padding: 45px 0
+	background: $blue-dark
+	&__container
+		max-width: 1140px
+		padding: 0 15px
+	&__info
+		display: flex
+		align-items: flex-end
+		margin: 0 -15px
+		&-col
+			padding: 0 15px
+		&-title
+			color: rgba($white, .5)
+			+f('bp700', 15, 25)
+			text-transform: uppercase
+			
+	&__copy
+		color: rgba(#e4f3f9, .5)
+		+f('bp300', 13)
+	&__mail
+		font-size: 16px
+		color: #ffdc36
+		border-bottom: 1px solid rgba(#ffdc36, .5)
+		+trs
+		.no-touch &:hover
+			border-bottom-color: #ffdc36
+
+/* dev-block
+	----------------------------------- */
+.dev-block
+	&__link
+		text-transform: uppercase
+		color: #5cbbf7
+		border-bottom: 1px solid rgba(#5cbbf7, .6)
+		+trs
+		.no-touch &:hover
+			border-bottom-color: #5cbbf7
+	&__text
+		color: $white
+		font-size: 14px
+		
+/* ===================================
+	 socials
+	 =================================== */
+.socials
+	display: flex
+	align-items: center
+	&__link
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		position: relative
+		height: 30px
+		font-size: 0
+		.no-touch &:hover .icon
+			fill: #5cbbf7
+		&::after
+			pointer-events: none
+			position: absolute
+			top: 3px
+			right: -12px
+			height: 26px
+			width: 1px
+			transform: rotate(30deg)
+			background: rgba(#ffdc36, .5)
+			content: ''
+		&:not(:first-child)
+			margin-left: 25px
+		&:last-child::after
+			display: none
+		.icon
+			+trs
+			&-vk
+				font-size: 13px
+			&-fb
+				font-size: 20px
+			&-inst
+				font-size: 20px
+			&-tw
+				font-size: 16px
+	
+/* ===================================
+	 pay-method
+	 =================================== */
+.pay-method
+	&__item
+		position: relative
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		height: 28px
+		&::after
+			pointer-events: none
+			position: absolute
+			top: 3px
+			right: -12px
+			height: 26px
+			width: 1px
+			transform: rotate(30deg)
+			background: rgba(#5cbbf7, .5)
+			content: ''
+		&:last-child::after
+			display: none
+		&:not(:first-child)
+			margin-left: 25px
+		.no-touch &:hover .icon
+			fill: $yellow
+		.icon
+			+trs

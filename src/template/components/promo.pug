@@ -1,0 +1,19 @@
+if promo ? promo : promo = []
+
+mixin promoEl(el)
+	+b.promo(class= el.classMod)
+		+e.inner
+			+e.col._has-img
+				+e.IMG(src=`static/img/content/${el.img}.png` alt='image')
+			+e.col
+				+e.text-top
+					+e.H3.title= el.title
+					+e.discount
+						+e.SPAN.discount-title Скидки до
+						+e.SPAN.discount-numb= el.discount
+				+e.P.descr= el.descr
+				+e.A.btn.btn._yellow(href='#!')= el.btn
+		+e.bg
+
+each el in promoList
+	+promoEl(el)

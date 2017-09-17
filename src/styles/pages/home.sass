@@ -13,6 +13,7 @@
 				line-height: 1
 				color: $blue-dark
 				text-transform: uppercase
+				+trs
 				.no-touch &:hover
 					color: $yellow-dark
 			.icon
@@ -157,3 +158,246 @@
 			&:not(:first-child)
 				margin-left: 10px
 	
+/* ===================================
+	 promo
+	 =================================== */
+.promo
+	position: relative
+	display: flex
+	align-items: center
+	min-height: 356px
+	$parent: &
+	&::after
+		content: ''
+		position: absolute
+		z-index: 0
+		border-radius: 10px
+		border: 3px solid #ebebeb
+		+trs
+	&::after
+		top: -10px
+		right: -40px
+		bottom: 0
+		left: 40px
+		transform: perspective(1600px) rotateY(15deg) rotateX(15deg)
+	&__inner
+		position: relative
+		display: flex
+		z-index: 2
+		padding: 10px 30px
+	&__col
+		flex-basis: 50%
+		width: 50%
+		padding: 0 15px
+		&_has-img
+			+vertical
+			img
+				display: inline-block
+				max-width: 295px
+				vertical-align: middle
+	&__text
+		&-top
+			display: flex
+			align-items: center
+	&__title
+		+f('bp700', 35)
+		line-height: 1
+		color: $white
+	&__descr
+		margin: -10px 0 25px
+		color: #d6def1
+		line-height: 27px
+		letter-spacing: .04em
+	&__discount
+		display: flex
+		flex-direction: column
+		justify-content: center
+		flex: 1 0 200px
+		width: 200px
+		height: 140px
+		padding-bottom: 10px
+		color: $blue-dark
+		text-align: center
+		background: url("../img/bg/promo-disc_bg.png") no-repeat 50% 50% / cover
+		&-title
+			display: block
+			margin-bottom: 10px
+			font-size: 22px
+		&-numb
+			+f('bp700', 44)
+	&__btn
+		padding: 0 33px
+	&__bg
+		position: absolute
+		top: 0
+		right: 20px
+		left: -30px
+		bottom: 0
+		z-index: 1
+		border-radius: 10px
+		transform: perspective(1000px) rotateY(-8deg)
+		background: linear-gradient(116deg, #e4f3f9 0%, #e4f3f9 44%, #0069ac 44%, #0069ac 100%)
+		+trs
+	&_home
+		margin: 25px 0 0
+		
+/* ===================================
+	 products
+	 =================================== */
+.products
+	padding: 60px 0 0
+	&__actions
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__list
+		display: flex
+		margin: 0 -15px
+		flex-wrap: wrap
+	&__pages
+		display: flex
+		li
+			width: 35px
+			height: 35px
+			line-height: 35px
+			border-radius: 50%
+			color: $black
+			text-align: center
+			&.is-active
+				background-color: $blue
+				color: $white
+			&.is-active a
+				text-decoration: none
+			a
+				display: inline-block
+				text-decoration: underline
+				+f('bp700', 15)
+				.no-touch &:hover
+					text-decoration: none
+	&__view-count
+		+f('bp700', 15)
+		color: $black
+		&-text
+			display: inline-block
+			margin-right: 10px
+		
+/* ===================================
+	 product-item
+	 =================================== */
+.product-item
+	position: relative
+	flex-basis: calc(33.333333% - 30px)
+	width: calc(33.333333% - 30px)
+	margin: 0 15px 30px
+	padding: 24px 24px 35px
+	border-radius: 10px
+	border: 1px solid #ebebeb
+	text-align: center
+	&__img-wrap
+		height: 184px
+	&__data
+		margin-bottom: 12px
+	&__name
+		+f('bp500', 18)
+		color: $blue
+		border-bottom: 1px solid rgba($blue, .5)
+		+trs
+		.no-touch &:hover
+			border-bottom-color: $blue
+	&__descr
+		margin-top: 3px
+		font-size: 15px
+		line-height: 22px
+	&__info
+		&-row
+			display: flex
+			align-items: center
+			justify-content: space-between
+			&:not(:first-child)
+				margin-top: 5px
+	&__cart-add
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		width: 30px
+		height: 30px
+		border-radius: 10px
+		background: $yellow linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
+		font-size: 0
+		+trs
+		.icon
+			fill: $black
+			font-size: 14px
+		.no-touch &:hover
+			background: $orange
+	&__weight
+		font-size: 15px
+	&__price
+		+f('bp500')
+		font-size: 18px
+		color: $black
+		&-old
+			color: #a3a3a3
+			text-decoration: line-through
+	&__label
+		position: absolute
+		top: 25px
+		right: 16px
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		text-align: center
+		font-size: 0
+		.icon
+			fill: $white
+			font-size: 20px
+		&_promo
+			background: #fa5569 linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
+			.icon
+				position: relative
+				top: -1px
+		&_new
+			background: #33c14b linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
+			
+/* ===================================
+	 assortment
+	 =================================== */
+.assortment
+	padding: 0 0 30px
+	&__inner
+		display: flex
+		justify-content: space-between
+	&__item
+		position: relative
+		+f('bp900')
+		text-transform: uppercase
+		&-text
+			position: absolute
+			left: 44px
+			bottom: 44px
+			z-index: 1
+		&-title
+			margin-bottom: 2px
+			font-size: 25px
+			color: $blue
+		&-descr
+			font-size: 20px
+			color: $black
+			
+/* ===================================
+	 about-text
+	 =================================== */
+.about-text
+	padding: 40px 0 55px
+	&__inner
+	&__title
+		margin-bottom: 30px
+		+f('bp700', 30)
+		text-transform: uppercase
+		color: #131c27
+	&__descr
+		p + p
+			margin-top: 20px

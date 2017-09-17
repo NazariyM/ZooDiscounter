@@ -1,2 +1,47 @@
-mixin footer()
-    footer
++b.FOOTER.footer
+	+e.container.container
+		+b.nav._footer
+			+e.UL.list
+				-
+					navList = [
+					'О нас',
+					'Контакты',
+					'Магазины / Пункты выдачи',
+					'Доставка',
+					'Условия возврата',
+					'Жалобы и предложения'
+					]
+				for navLink, index in navList
+					-activeIndex = 2
+					li(class= index === activeIndex - 1 ? 'is-active' : ''): a(href='#!')= navLink
+		
+		+e.info
+			+e.info-col
+				+e.A.logo(href='#!')
+					+e.IMG(src='static/img/logo_white.png' alt='image')
+				+e.copy
+					+e.P © 2005 - 2017. Все права защищены.
+					+e.P ZOODISCOUNTER
+			+e.info-col
+				+e.H5.info-title ПРИСОЕДИНЯЙТЕСЬ К НАМ В СОЦ. СЕТЯХ
+				+b.socials
+					-socialsList = ['vk', 'fb', 'inst', 'tw']
+					for socialsItem in socialsList
+						+e.A.link(href='#!' target='_blank')
+							+i(`${socialsItem}`)
+			+e.info-col
+				+e.H5.info-title Мы принимаем к оплате
+				+b.pay-method
+					+e.A.item(href='#!')
+						+i('visa')
+					+e.A.item(href='#!')
+						+i('mc')
+			+e.info-col
+				+b.phones._footer
+					+e.A.num(href='tel:88462672575') 8 846 267-25-75
+					+e.A.num(href='tel:89053002575') 8 905 300-25-75
+				+e.A.mail(href='#!') info@zoodiscounter.ru
+			+e.info-col
+				+b.dev-block
+					+e.A.link(href='#!') АКТИКОМ
+					+e.P.text Создано руками

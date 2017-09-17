@@ -5,11 +5,11 @@ block variables
 
 block main
 	main.content(data-page='home')
-		+e.container.container
+		+e.content__container.container
 			+b.c-tabs
 				+e.tabs-nav
-					+e.tabs-el СОБАКИ
-					+e.tabs-el.is-active КОШКИ
+					+e.tabs-el.is-active СОБАКИ
+					+e.tabs-el КОШКИ
 					+e.tabs-el ГРЫЗУНЫ
 					+e.tabs-el ПТИЦЫ
 					+e.tabs-el РЫБКИ
@@ -111,7 +111,76 @@ block main
 
 					+e.tabs-for
 						+e.tab
+							-
+								promoList = [{
+								classMod: '_home',
+								title: 'Летняя Акция',
+								descr: 'Полнорационный сухой корм Chappi сытный мясной обед "Мясное изобилие" подходит для всех пород собак. ',
+								img: 'chappi_img',
+								discount: '50%',
+								btn: 'Подробнее'
+								}]
+							include ../components/promo
+
+							+b.products
+
+								+e.list
+									-productItemCount = 0
+									while productItemCount < 2
+										-
+											productList = [{
+											img: 'pedigree_img',
+											name: 'Pedigree',
+											descr: 'Сухой корм для щенков первый прикорм'
+											}, {
+											img: 'go!_img',
+											name: 'GO! NATURAL Holistic',
+											descr: 'Беззерновой для котят и кошек пищеварением',
+											promo: true
+											}, {
+											img: 'eukanuba_img',
+											name: 'Eukanuba',
+											descr: 'Беззерновой для котят и кошек пищеварением',
+											novelty: true
+											}]
+										include ../components/product-item
+										-productItemCount++
+
+								+e.actions
+									+e.UL.pages
+										-pagesCount = 1
+										-pagesIndex = 0
+										-actIndex = 1
+										while pagesCount < 5
+											li(class= pagesIndex === actIndex - 1 ? 'is-active ' : ''): a(href='#!')= pagesCount
+											-pagesCount++
+											-pagesIndex++
+
+									+e.view-count
+										+e.SPAN.view-count-text Отображать по:
+										+e.SELECT.js-select
+											option 20
+											option 40
+											option 60
 						+e.tab
 						+e.tab
 						+e.tab
 						+e.tab
+
+				-
+					assortmentList = [{
+					img: 'assort_cat',
+					title: 'Корм',
+					descr: 'Для кошек'
+					}, {
+					img: 'assort_dog',
+					title: 'Корм',
+					descr: 'Для собак'
+					}, {
+					img: 'assort_fish',
+					title: 'Корм',
+					descr: 'Для рыбок'
+					}]
+				include ../components/assortment
+
+				include ../components/about-text

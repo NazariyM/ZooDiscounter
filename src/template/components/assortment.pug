@@ -1,0 +1,13 @@
+if assortment ? assortment : assortment = []
+
++b.SECTION.assortment(class= assortment.classMod ? assortment.classMod : '')
+	+e.inner
+		mixin assortItem(item)
+			+e.A.item(href='#!')
+				+e.item-text
+					+e.H5.item-title= item.title
+					+e.P.item-descr= item.descr
+				+e.DIV.item-img
+					+e.IMG(src=`static/img/bg/${item.img}.png` alt='image')
+		each item in assortmentList
+			+assortItem(item)

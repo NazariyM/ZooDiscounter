@@ -320,7 +320,8 @@ var svgIcon = exports.svgIcon = function svgIcon(name) {
 
 /***/ }),
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -334,11 +335,11 @@ var svgIcon = exports.svgIcon = function svgIcon(name) {
 
 /** Import initialized-by-default modules/libs */
 
-__webpack_require__(3);
+__webpack_require__(4);
 
-__webpack_require__(10);
+__webpack_require__(14);
 
-var _home = __webpack_require__(11);
+var _home = __webpack_require__(15);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -365,7 +366,7 @@ switch (_helpers.currentPage) {
 /** Import utils */
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -378,21 +379,21 @@ exports.Common = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(4);
+__webpack_require__(5);
 
-var _cTabs = __webpack_require__(5);
+var _cTabs = __webpack_require__(6);
 
 var _cTabs2 = _interopRequireDefault(_cTabs);
 
-var _initDot = __webpack_require__(7);
+var _initDot = __webpack_require__(8);
 
 var _initDot2 = _interopRequireDefault(_initDot);
 
-var _objectFitImages = __webpack_require__(9);
+var _objectFitImages = __webpack_require__(10);
 
 var _objectFitImages2 = _interopRequireDefault(_objectFitImages);
 
-var _ionRangeslider = __webpack_require__(16);
+var _ionRangeslider = __webpack_require__(11);
 
 var _ionRangeslider2 = _interopRequireDefault(_ionRangeslider);
 
@@ -476,7 +477,7 @@ $resetRangeSld.on('click', function () {
 exports.default = new Common().init();
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -515,7 +516,7 @@ var NoTouch = exports.NoTouch = function () {
 exports.default = new NoTouch();
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -528,7 +529,7 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); // import { TweenMax } from 'gsap';
 
 
-var _gsap = __webpack_require__(6);
+var _gsap = __webpack_require__(7);
 
 var _helpers = __webpack_require__(0);
 
@@ -619,7 +620,7 @@ var CTabs = function () {
 exports.default = CTabs;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -8551,7 +8552,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8564,7 +8565,7 @@ exports.Dot = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(8);
+__webpack_require__(9);
 
 var _helpers = __webpack_require__(0);
 
@@ -8613,7 +8614,7 @@ var Dot = exports.Dot = function () {
 exports.default = new Dot();
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 /*
@@ -9285,7 +9286,7 @@ exports.default = new Dot();
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9523,158 +9524,7 @@ module.exports = fix;
 
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Website's public API.
- *
- * @module PublicAPI
- */
-
-var PublicAPI = exports.PublicAPI = function () {
-  /**
-   * Set initial settings (if needed).
-   */
-  function PublicAPI() {
-    _classCallCheck(this, PublicAPI);
-
-    this.counter = 1;
-    this.timerInterval = null;
-  }
-
-  /**
-   * Timer's public methods.
-   *
-   * PublicAPI.timer.init()    - initialize timer
-   * PublicAPI.timer.set()     - set timer's value
-   * PublicAPI.timer.destroy() - destroy (stop) timer
-   *
-   * @return {{init: Function, destroy: Function}}
-   */
-
-
-  _createClass(PublicAPI, [{
-    key: "timer",
-    get: function get() {
-      var _this = this;
-
-      // initialize timer
-      var startTimer = function startTimer() {
-        return _this.timerInterval = setInterval(function () {
-          return console.log("Timer: " + _this.counter++);
-        }, 1000);
-      };
-
-      // set timer's value
-      var setTime = function setTime(time) {
-        return _this.counter = time;
-      };
-
-      // destroy (stop) timer
-      var stopTimer = function stopTimer() {
-        return clearInterval(_this.timerInterval);
-      };
-
-      // timer's API
-      return {
-        init: startTimer,
-        set: setTime,
-        destroy: stopTimer
-      };
-    }
-  }]);
-
-  return PublicAPI;
-}();
-
-/** Expose Public API */
-
-
-exports.default = window.PublicAPI = new PublicAPI();
-
-/***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Home page scripts.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @module Home
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-/** Import utils */
-
-
-var _helpers = __webpack_require__(0);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Home = function () {
-  /**
-   * Cache data, make preparations and initialize page scripts.
-   */
-  function Home() {
-    _classCallCheck(this, Home);
-
-    // Cache data, make preparations etc.
-    this.showOnDesktop = 'HOME: Desktop device detected';
-
-    // Initialize page scripts
-    this.init();
-  }
-
-  /**
-   * Example method.
-   */
-
-
-  _createClass(Home, [{
-    key: 'example',
-    value: function example() {
-      if (_helpers.Resp.isDesk) console.log(this.showOnDesktop);
-    }
-  }, {
-    key: 'init',
-
-
-    /**
-     * Initialize Home page scripts.
-     */
-    value: function init() {
-      this.example();
-    }
-  }]);
-
-  return Home;
-}();
-
-exports.default = Home;
-
-/***/ }),
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Ion.RangeSlider
@@ -9691,7 +9541,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Ion.RangeSlid
 
 ;(function(factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(13)], __WEBPACK_AMD_DEFINE_RESULT__ = function (jQuery) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_RESULT__ = function (jQuery) {
             return factory(jQuery, document, window, navigator);
         }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -12130,6 +11980,155 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Ion.RangeSlid
 }));
 
 
+/***/ }),
+/* 12 */,
+/* 13 */,
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Website's public API.
+ *
+ * @module PublicAPI
+ */
+
+var PublicAPI = exports.PublicAPI = function () {
+  /**
+   * Set initial settings (if needed).
+   */
+  function PublicAPI() {
+    _classCallCheck(this, PublicAPI);
+
+    this.counter = 1;
+    this.timerInterval = null;
+  }
+
+  /**
+   * Timer's public methods.
+   *
+   * PublicAPI.timer.init()    - initialize timer
+   * PublicAPI.timer.set()     - set timer's value
+   * PublicAPI.timer.destroy() - destroy (stop) timer
+   *
+   * @return {{init: Function, destroy: Function}}
+   */
+
+
+  _createClass(PublicAPI, [{
+    key: "timer",
+    get: function get() {
+      var _this = this;
+
+      // initialize timer
+      var startTimer = function startTimer() {
+        return _this.timerInterval = setInterval(function () {
+          return console.log("Timer: " + _this.counter++);
+        }, 1000);
+      };
+
+      // set timer's value
+      var setTime = function setTime(time) {
+        return _this.counter = time;
+      };
+
+      // destroy (stop) timer
+      var stopTimer = function stopTimer() {
+        return clearInterval(_this.timerInterval);
+      };
+
+      // timer's API
+      return {
+        init: startTimer,
+        set: setTime,
+        destroy: stopTimer
+      };
+    }
+  }]);
+
+  return PublicAPI;
+}();
+
+/** Expose Public API */
+
+
+exports.default = window.PublicAPI = new PublicAPI();
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Home page scripts.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @module Home
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+/** Import utils */
+
+
+var _helpers = __webpack_require__(0);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Home = function () {
+  /**
+   * Cache data, make preparations and initialize page scripts.
+   */
+  function Home() {
+    _classCallCheck(this, Home);
+
+    // Cache data, make preparations etc.
+    this.showOnDesktop = 'HOME: Desktop device detected';
+
+    // Initialize page scripts
+    this.init();
+  }
+
+  /**
+   * Example method.
+   */
+
+
+  _createClass(Home, [{
+    key: 'example',
+    value: function example() {
+      if (_helpers.Resp.isDesk) console.log(this.showOnDesktop);
+    }
+  }, {
+    key: 'init',
+
+
+    /**
+     * Initialize Home page scripts.
+     */
+    value: function init() {
+      this.example();
+    }
+  }]);
+
+  return Home;
+}();
+
+exports.default = Home;
+
 /***/ })
-],[2]);
+],[3]);
 //# sourceMappingURL=index.js.map
