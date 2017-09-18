@@ -53,13 +53,22 @@
 		&-container
 			padding: 45px 15px 50px
 			max-width: 1140px
+			+lg
+				padding: 30px 15px 35px
 		&-inner
 			margin: 0 -15px
-			font-size: 0
+			+justify
+			+lg
+				margin: 0 -10px
 		&-col
 			display: inline-block
 			vertical-align: middle
 			padding: 0 15px
+			+lg
+				padding: 0 10px
+			&:nth-child(1)
+				+lg
+					width: 30%
 	&__logo
 		display: block
 	&__basket
@@ -74,6 +83,8 @@
 		background: $yellow linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
 		+trs
 		z-index: 1
+		+lg
+			padding: 10px 30px 10px 15px
 		&::after
 			position: absolute
 			width: 30px
@@ -122,6 +133,8 @@
 		li
 			&:not(:first-child)
 				margin-left: 33px
+				+lg
+					margin-left: 21px
 			&.is-active a
 				pointer-events: none
 				color: $yellow
@@ -139,20 +152,3 @@
 				border-bottom: 1px solid rgba($white, .5)
 				.no-touch &:hover
 					border-bottom-color: $yellow
-					
-/*
-	----------------------------------- */
-.phones
-	$parent: &
-	&__num
-		display: block
-		+f('bp700', 25, 35)
-		color: $blue-dark
-		+trs
-		.no-touch &:hover
-			color: $yellow
-	&_footer
-	&_footer #{$parent}__num
-		color: $white
-		line-height: 29px
-		

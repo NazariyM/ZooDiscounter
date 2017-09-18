@@ -1,5 +1,5 @@
 // import { TweenMax } from 'gsap';
-import { TweenMax, CSSPlugin } from 'gsap';
+import { TweenMax } from 'gsap';
 import { css, Resp } from '../modules/dev/helpers';
 
 export default class CTabs {

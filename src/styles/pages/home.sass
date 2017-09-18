@@ -186,7 +186,6 @@
 		z-index: 2
 		padding: 10px 30px
 	&__col
-		flex-basis: 50%
 		width: 50%
 		padding: 0 15px
 		&_has-img
@@ -443,3 +442,22 @@
 			line-height: 24px
 		p + p
 			margin-top: 25px
+			
+/*
+	----------------------------------- */
+.phones
+	$parent: &
+	&__num
+		display: block
+		+f('bp700', 25, 35)
+		color: $blue-dark
+		+trs
+		+lg
+			font-size: 20px
+			line-height: 25px
+		.no-touch &:hover
+			color: $yellow
+	&_footer
+	&_footer #{$parent}__num
+		color: $white
+		line-height: 29px
