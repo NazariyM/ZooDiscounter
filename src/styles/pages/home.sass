@@ -77,29 +77,29 @@
 				left: 0
 			&_dogs
 				&::after
-					+s(36, 37, -5, -352)
+					+s(36, 37, -5, -352, filter)
 				&::before
-					+s(36, 37, -5, -394)
+					+s(36, 37, -5, -394, filter)
 			&_cats
 				&::after
-					+s(56, 39, -5, -72)
+					+s(56, 39, -5, -72, filter)
 				&::before
-					+s(56, 39, -5, -116)
+					+s(56, 39, -5, -116, filter)
 			&_rabbits
 				&::after
-					+s(37, 38, -5, -266)
+					+s(37, 38, -5, -266, filter)
 				&::before
-					+s(37, 38, -5, -309)
+					+s(37, 38, -5, -309, filter)
 			&_birds
 				&::after
-					+s(54, 48, -5, -160)
+					+s(54, 48, -5, -160, filter)
 				&::before
-					+s(54, 48, -5, -213)
+					+s(54, 48, -5, -213, filter)
 			&_fishes
 				&::after
-					+s(57, 31, -5, -0)
+					+s(57, 31, -5, -0, filter)
 				&::before
-					+s(57, 31, -5, -36)
+					+s(57, 31, -5, -36, filter)
 					
 	&__group
 		&:not(:last-child)
@@ -275,6 +275,8 @@
 				.no-touch &:hover
 					text-decoration: none
 	&__view-count
+		display: inline-flex
+		align-items: center
 		+f('bp700', 15)
 		color: $black
 		&-text
@@ -290,6 +292,8 @@
 	width: calc(33.333333% - 30px)
 	margin: 0 15px 30px
 	text-align: center
+	cursor: default
+	$parent: &
 	&::before, &::after
 		content: ''
 		+coverdiv
@@ -317,6 +321,8 @@
 		right: -30px
 		bottom: -10px
 		transform: perspective(600px) rotateY(10deg) rotateX(6deg)
+	.no-touch &:hover #{$parent}__label
+		animation: popIn .3s .4s ease
 	&__inner
 		position: relative
 		z-index: 1

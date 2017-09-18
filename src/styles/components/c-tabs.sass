@@ -19,41 +19,123 @@
 			right: 0
 			+arr(30, 20, $black, tl)
 	&__tabs-el
+		$parent: &
 		position: relative
-		display: block
-		padding: 35px 25px
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		height: 90px
+		width: 212px
+		//padding: 0 25px
 		cursor: pointer
 		color: $white
-		+f('bp900', 20)
 		line-height: 1
 		text-transform: uppercase
-		+trs
+		overflow: hidden
+		font-size: 0
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background: $yellow
+			transform: translateY(100%)
+			+trs
 		&::after
 			pointer-events: none
 			position: absolute
-			width: 100%
-			height: 20px
+			width: 0
+			height: 21px
 			content: ''
 			top: -14px
-			right: 0
+			left: 0
 			z-index: 0
 			border-radius: 10px 10px 0 0
 			transform: rotate(-4deg)
 			background: transparent
-			+trs
+			opacity: 0
+			transition: width .3s .3s ease, opacity .3s ease
 		&.is-active
+			overflow: visible
 			pointer-events: none
 			color: $black
 			background: $yellow
+			&::before
+				display: none
 			&::after
+				width: 100%
+				opacity: 1
+				transform: rotate(-4deg)
 				background: $yellow
+			#{$parent}-icon::after
+				opacity: 1
 		&.is-disabled
 			pointer-events: none
 			opacity: 0.5
 			background-color: $gray
-		.no-touch &:hover
-			color: $yellow
+		.no-touch &:hover #{$parent}-text
+			color: $black
+		.no-touch &:hover #{$parent}-icon::before
+			opacity: 0
+		.no-touch &:hover #{$parent}-icon::after
+			opacity: 1
+		.no-touch &:hover::before
+			transform: translateY(0)
+		&-text
+			position: relative
+			margin: 8px 0 0 10px
+			z-index: 1
+			+trs
+			+f('bp900', 20)
+		&-icon
+			position: relative
+			&::before
+				position: relative
+				content: ''
+				display: block
+				opacity: 1
+				+trs
+			&::after
+				+coverdiv
+				content: ''
+				opacity: 0
+				+trs
+			&_dogs
+				&::before
+					+s(49, 52, -5, -324, tabs-nav)
+				&::after
+					+s(49, 52, -5, -381, tabs-nav)
+			&_cats
+				&::before
+					top: 14px
+					+s(70, 73, -5, -88, tabs-nav)
+				&::after
+					top: 14px
+					+s(70, 73, -5, -88, tabs-nav)
+			&_rabbits
+				&::before
+					left: -4px
+					+s(47, 49, -5, -436, tabs-nav)
+				&::after
+					left: -4px
+					+s(47, 49, -5, -490, tabs-nav)
+			&_birds
+				&::before
+					top: 13px
+					+s(68, 75, -5, -166, tabs-nav)
+				&::after
+					top: 13px
+					+s(68, 75, -5, -246, tabs-nav)
+			&_fishes
+				&::before
+					+s(73, 40, -5, -0, tabs-nav)
+				&::after
+					+s(73, 40, -5, -45, tabs-nav)
 	&__inner
+		position: relative
+		z-index: 1
 		display: flex
 		padding: 40px 0 36px
 		background: $white

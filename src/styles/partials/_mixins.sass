@@ -194,7 +194,7 @@ $browser-context: 16
 		overflow: hidden
 		
 // png sprite mixin
-=s($width, $height, $posX, $posY)
+=s($width, $height, $posX, $posY, $name)
 	width: $width + px
 	height: $height + px
-	background: url('../img/sprite/filter-sprite.png') no-repeat $posX + px $posY + px
+	background: url('../img/sprite/#{$name}-sprite.png') no-repeat $posX + px $posY + px

@@ -1,4 +1,5 @@
 import './noTouch';
+import { Selectric } from './selectInit';
 import CTabs from './c-tabs';
 import Dot from './initDot';
 import objectFitImages from 'object-fit-images';
@@ -49,6 +50,10 @@ $tabs.each((index, el) => {
   const tab = new CTabs($(el));
   tab.init();
 });
+
+/** price filter range */
+const $customSelect = $('.js-select');
+$customSelect.selectric();
 
 /** price filter range */
 const $rangeSlider = $('.js-filter-range');
