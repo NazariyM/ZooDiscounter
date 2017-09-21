@@ -156,6 +156,17 @@ export class Resp {
   }
 
   /**
+   * Detect mob and tablet device.
+   *
+   * @get
+   * @static
+   * @return {Boolean}
+   */
+  static get isMobileAndTablet() {
+    return window.matchMedia(`(max-width: 1023px)`).matches;
+  }
+
+  /**
    * Detect mobile device.
    *
    * @get
@@ -176,7 +187,8 @@ export class Resp {
 export const css = {
   active: 'is-active',
   hidden: 'is-hidden',
-  visible: 'is-visible'
+  visible: 'is-visible',
+  locked: 'is-locked'
 };
 
 /**

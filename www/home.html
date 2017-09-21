@@ -127,7 +127,13 @@
     <header class="header">
       <div class="header__menu">
         <div class="header__container container">
-          <nav class="nav">
+          <div class="nav-toggle">
+            <div class="nav-toggle__text">Меню</div>
+            <div class="nav-toggle__btn js-nav-btn">
+              <span></span>
+            </div>
+          </div>
+          <nav class="nav nav_header js-nav">
             <ul class="nav__list">
               <li>
                 <a href="#!">О нас</a>
@@ -258,151 +264,153 @@
                   </a>
                 </li>
               </ul>
-              <div class="product-filter">
+              <div class="product-filter js-filter">
                 <form action="#!" method="POST">
-                  <h3 class="product-filter__title title-bg">ФИЛЬТР</h3>
-                  <div class="product-filter__type">
-                    <div class="product-filter__sub-title">Тип животного:</div>
-                    <div class="product-filter__type-inner">
-                      <div class="product-filter__type-item">
-                        <input id="animal-type-1" type="checkbox" name="animal-type" />
-                        <label class="product-filter__type-icon product-filter__type-icon_dogs" for="animal-type-1"></label>
-                      </div>
-                      <div class="product-filter__type-item">
-                        <input id="animal-type-2" type="checkbox" name="animal-type" />
-                        <label class="product-filter__type-icon product-filter__type-icon_cats" for="animal-type-2"></label>
-                      </div>
-                      <div class="product-filter__type-item">
-                        <input id="animal-type-3" type="checkbox" name="animal-type" />
-                        <label class="product-filter__type-icon product-filter__type-icon_rabbits" for="animal-type-3"></label>
-                      </div>
-                      <div class="product-filter__type-item">
-                        <input id="animal-type-4" type="checkbox" name="animal-type" />
-                        <label class="product-filter__type-icon product-filter__type-icon_birds" for="animal-type-4"></label>
-                      </div>
-                      <div class="product-filter__type-item">
-                        <input id="animal-type-5" type="checkbox" name="animal-type" />
-                        <label class="product-filter__type-icon product-filter__type-icon_fishes" for="animal-type-5"></label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-filter__group">
-                    <div class="product-filter__sub-title">Группа товаров:</div>
-                    <div class="product-filter__check">
-                      <input id="check-1" type="checkbox" name="" />
-                      <label class="product-filter__check-item" for="check-1">Корм
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="product-filter__check">
-                      <input id="check-2" type="checkbox" name="" />
-                      <label class="product-filter__check-item" for="check-2">Лакомства
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                      <div class="product-filter__check-tooltip">
-                        <a class="product-filter__check-tooltip-text" href="#!">36 товаров</a>
+                  <h3 class="product-filter__title title-bg js-filter-open">ФИЛЬТР</h3>
+                  <div class="product-filter__inner">
+                    <div class="product-filter__type">
+                      <div class="product-filter__sub-title">Тип животного:</div>
+                      <div class="product-filter__type-inner">
+                        <div class="product-filter__type-item">
+                          <input id="animal-type-1" type="checkbox" name="animal-type" />
+                          <label class="product-filter__type-icon product-filter__type-icon_dogs" for="animal-type-1"></label>
+                        </div>
+                        <div class="product-filter__type-item">
+                          <input id="animal-type-2" type="checkbox" name="animal-type" />
+                          <label class="product-filter__type-icon product-filter__type-icon_cats" for="animal-type-2"></label>
+                        </div>
+                        <div class="product-filter__type-item">
+                          <input id="animal-type-3" type="checkbox" name="animal-type" />
+                          <label class="product-filter__type-icon product-filter__type-icon_rabbits" for="animal-type-3"></label>
+                        </div>
+                        <div class="product-filter__type-item">
+                          <input id="animal-type-4" type="checkbox" name="animal-type" />
+                          <label class="product-filter__type-icon product-filter__type-icon_birds" for="animal-type-4"></label>
+                        </div>
+                        <div class="product-filter__type-item">
+                          <input id="animal-type-5" type="checkbox" name="animal-type" />
+                          <label class="product-filter__type-icon product-filter__type-icon_fishes" for="animal-type-5"></label>
+                        </div>
                       </div>
                     </div>
-                    <div class="product-filter__check">
-                      <input id="check-3" type="checkbox" name="" />
-                      <label class="product-filter__check-item" for="check-3">Гигиена
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
+                    <div class="product-filter__group">
+                      <div class="product-filter__sub-title">Группа товаров:</div>
+                      <div class="product-filter__check">
+                        <input id="check-1" type="checkbox" name="" />
+                        <label class="product-filter__check-item" for="check-1">Корм
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="product-filter__check">
+                        <input id="check-2" type="checkbox" name="" />
+                        <label class="product-filter__check-item" for="check-2">Лакомства
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                        <div class="product-filter__check-tooltip">
+                          <a class="product-filter__check-tooltip-text" href="#!">36 товаров</a>
+                        </div>
+                      </div>
+                      <div class="product-filter__check">
+                        <input id="check-3" type="checkbox" name="" />
+                        <label class="product-filter__check-item" for="check-3">Гигиена
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="product-filter__check">
+                        <input id="check-4" type="checkbox" name="" />
+                        <label class="product-filter__check-item" for="check-4">Наполнители
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="product-filter__check">
+                        <input id="check-5" type="checkbox" name="" />
+                        <label class="product-filter__check-item" for="check-5">Шампуни
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
                     </div>
-                    <div class="product-filter__check">
-                      <input id="check-4" type="checkbox" name="" />
-                      <label class="product-filter__check-item" for="check-4">Наполнители
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
+                    <div class="product-filter__group">
+                      <div class="product-filter__sub-title">Бренды:</div>
+                      <div class="product-filter__check">
+                        <input id="check-6" type="checkbox" name="" />
+                        <label class="product-filter__check-item" for="check-6">Royal Canin
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="product-filter__check">
+                        <input id="check-7" type="checkbox" name="" checked="checked" />
+                        <label class="product-filter__check-item" for="check-7">Pro Plan
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="product-filter__check">
+                        <input id="check-8" type="checkbox" name="" />
+                        <label class="product-filter__check-item" for="check-8">Gourmet
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="product-filter__check">
+                        <input id="check-9" type="checkbox" name="" checked="checked" />
+                        <label class="product-filter__check-item" for="check-9">Kitekat
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="product-filter__check">
+                        <input id="check-10" type="checkbox" name="" />
+                        <label class="product-filter__check-item" for="check-10">Whiskas
+                          <span class="product-filter__check-square">
+                            <svg class="icon icon-check">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
                     </div>
-                    <div class="product-filter__check">
-                      <input id="check-5" type="checkbox" name="" />
-                      <label class="product-filter__check-item" for="check-5">Шампуни
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="product-filter__group">
-                    <div class="product-filter__sub-title">Бренды:</div>
-                    <div class="product-filter__check">
-                      <input id="check-6" type="checkbox" name="" />
-                      <label class="product-filter__check-item" for="check-6">Royal Canin
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="product-filter__check">
-                      <input id="check-7" type="checkbox" name="" checked="checked" />
-                      <label class="product-filter__check-item" for="check-7">Pro Plan
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="product-filter__check">
-                      <input id="check-8" type="checkbox" name="" />
-                      <label class="product-filter__check-item" for="check-8">Gourmet
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="product-filter__check">
-                      <input id="check-9" type="checkbox" name="" checked="checked" />
-                      <label class="product-filter__check-item" for="check-9">Kitekat
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="product-filter__check">
-                      <input id="check-10" type="checkbox" name="" />
-                      <label class="product-filter__check-item" for="check-10">Whiskas
-                        <span class="product-filter__check-square">
-                          <svg class="icon icon-check">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="product-filter__prices">
-                    <div class="product-filter__sub-title">Цены:</div>
-                    <div class="product-filter__prices-range">
-                      <input class="js-filter-range" type="text" name="" value="" data-min="0" data-max="5000" data-from="150" data-to="1500" data-step="50" />
-                    </div>
-                    <div class="product-filter__actions">
-                      <button class="product-filter__actions-btn btn btn_yellow js-reset-range" type="reset">СБРОСИТЬ</button>
-                      <button class="product-filter__actions-btn btn btn_blue" type="submit">Показать</button>
+                    <div class="product-filter__prices">
+                      <div class="product-filter__sub-title">Цены:</div>
+                      <div class="product-filter__prices-range">
+                        <input class="js-filter-range" type="text" name="" value="" data-min="0" data-max="5000" data-from="150" data-to="1500" data-step="50" />
+                      </div>
+                      <div class="product-filter__actions">
+                        <button class="product-filter__actions-btn btn btn_yellow js-reset-range" type="reset">СБРОСИТЬ</button>
+                        <input class="product-filter__actions-btn btn btn_blue" type="submit" />
+                      </div>
                     </div>
                   </div>
                 </form>
@@ -690,7 +698,7 @@
                           <span class="promo__discount-numb">50%</span>
                         </div>
                       </div>
-                      <p class="promo__descr">Полнорационный сухой корм Chappi сытный мясной обед &quot;Мясное изобилие&quot; подходит для всех пород собак. </p>
+                      <p class="promo__descr">Полнорационный сухой корм Chappi сытный мясной обед &quot;Мясное изобилие&quot; подходит для всех пород собак.</p>
                       <a class="promo__btn btn btn_yellow" href="#!">Подробнее</a>
                     </div>
                   </div>

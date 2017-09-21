@@ -4,9 +4,22 @@
 .sidebar
 	&__menu
 		padding: 36px 0 41px
+		+sm
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding: 10px 10px 20px
+		+xs
+			flex-direction: column
+			flex-wrap: wrap
 		li
 			&:not(:first-child)
 				margin-top: 22px
+				+sm
+					margin-top: 0
+					margin-left: 20px
+				+xs
+					margin: 15px 0 0 0
 			a
 				display: inline-block
 				+f('bp700', 18)
@@ -20,6 +33,8 @@
 				display: inline-block
 				vertical-align: -8px
 				width: 32px
+				+sm
+					vertical-align: middle
 				&-present
 					font-size: 30px
 				&-brand
@@ -37,24 +52,59 @@
 	 product-filter
 	 =================================== */
 .product-filter
+	+sm
+		text-align: center
 	&__title
 		margin-bottom: 12px
+		+sm
+			margin-bottom: 20px
+	&__inner
+		&.is-visible
+			max-height: 1000px
+		+sm
+			display: flex
+			flex-wrap: wrap
+			max-height: 0
+			padding-bottom: 5px
+			overflow: hidden
+			text-align: left
+			transition: max-height .5s ease-in
+			> div
+				flex: 1 1 50%
+				padding: 0 15px
+		+xs
+			> div
+				flex: 1 0 100%
+				padding: 0
+	
 	&__sub-title
 		color: $blue-dark
 		+f('bp700', 16)
 		letter-spacing: .02em
 	&__type
 		margin-bottom: 18px
+		+sm
+			order: 1
+			margin-bottom: 0
 		&-inner
 			margin-top: 21px
 			font-size: 0
+			+mob-xs
+				text-align: center
+				+justify
 		&-item
 			position: relative
 			display: inline-block
 			vertical-align: middle
 			margin: 0 25px 23px 0
+			+sm
+				margin: 0 0 23px 23px
+			+mob-xs
+				margin: 0 0 8px 0
 			&:first-child
 				margin-left: 10px
+				+sm
+					margin-left: 0
 			&:nth-child(5)
 				top: -6px
 				left: -9px
@@ -101,6 +151,9 @@
 				&::before
 					+s(57, 31, -5, -36, filter)
 					
+	&__prices
+		+sm
+			order: 1
 	&__group
 		&:not(:last-child)
 			margin-bottom: 28px
@@ -143,6 +196,8 @@
 			z-index: 1
 			background: url('../img/bg/check-tooltip.png') no-repeat 50% 50%/cover
 			text-align: center
+			+mob-xs
+				right: 0
 			&-text
 				+f('bp500', 13)
 				line-height: 1
@@ -166,6 +221,8 @@
 	display: flex
 	align-items: center
 	min-height: 356px
+	+xs
+		display: none
 	$parent: &
 	&::after
 		content: ''
@@ -180,14 +237,20 @@
 		bottom: 0
 		left: 40px
 		transform: perspective(1600px) rotateY(15deg) rotateX(15deg)
+		+md
+			right: -20px
 	&__inner
 		position: relative
 		display: flex
 		z-index: 2
 		padding: 10px 30px
+		+md
+			padding: 10px 15px
 	&__col
 		width: 50%
 		padding: 0 15px
+		+sm
+			padding: 0 10px
 		&_has-img
 			+vertical
 			img
@@ -237,6 +300,8 @@
 		transform: perspective(1000px) rotateY(-8deg)
 		background: linear-gradient(116deg, #e4f3f9 0%, #e4f3f9 44%, #0069ac 44%, #0069ac 100%)
 		+trs
+		+sm
+			left: -20px
 	&_home
 		margin: 25px 0 0
 		
@@ -245,14 +310,25 @@
 	 =================================== */
 .products
 	padding: 60px 0 0
+	+md
+		padding: 30px 0 0
+	+xs
+		padding: 15px 0 0
 	&__actions
 		display: flex
 		justify-content: space-between
 		align-items: center
+		+mob-xs
+			flex-direction: column
 	&__list
 		display: flex
 		margin: 0 -15px
 		flex-wrap: wrap
+		+md
+			margin: 0 -10px
+		+mob-xs
+			flex-direction: column
+			margin: 0
 	&__pages
 		display: flex
 		li
@@ -278,6 +354,9 @@
 		align-items: center
 		+f('bp700', 15)
 		color: $black
+		+mob-xs
+			order: -1
+			margin-bottom: 15px
 		&-text
 			display: inline-block
 			margin-right: 10px
@@ -293,11 +372,28 @@
 	text-align: center
 	cursor: default
 	$parent: &
+	+md
+		flex-basis: calc(33.333333% - 20px)
+		width: calc(33.333333% - 20px)
+		margin: 0 10px 20px
+	+sm
+		flex-basis: calc(50% - 20px)
+		width: calc(50% - 20px)
+		margin: 0 10px 20px
+		border: 1px solid #ebebeb
+		background: $white
+		border-radius: 10px
+	+mob-xs
+		flex: 1 0 auto
+		margin: 0 0 20px
+		width: auto
 	&::before, &::after
 		content: ''
 		+coverdiv
 		border-radius: 10px
 		+trs
+		+sm
+			display: none
 	&::before
 		border: 1px solid #ebebeb
 		background: $white
@@ -326,6 +422,10 @@
 		position: relative
 		z-index: 1
 		padding: 24px 24px 35px
+		+md
+			padding: 15px 15px 25px
+		+sm
+			padding: 25px
 	&__img-wrap
 		height: 184px
 	&__data
@@ -338,6 +438,7 @@
 		.no-touch &:hover
 			border-bottom-color: $blue
 	&__descr
+		min-height: 44px
 		margin-top: 3px
 		font-size: 15px
 		line-height: 22px
@@ -400,15 +501,22 @@
 	 =================================== */
 .assortment
 	padding: 0 15px 30px
+	+sm
+		padding: 0 0 15px
 	&__inner
 		display: flex
 		justify-content: space-between
+		+sm
+			flex-wrap: wrap
+			justify-content: space-around
 	&__item
 		position: relative
 		+f('bp900')
 		text-transform: uppercase
 		transition: transform .3s ease-in-out
 		+gpu
+		+sm
+			margin-bottom: 15px
 		.no-touch &:hover
 			transform: perspective(600px) rotateY(-15deg)
 		&-text
@@ -429,6 +537,8 @@
 	 =================================== */
 .about-text
 	padding: 25px 15px 55px
+	+sm
+		padding: 5px 0px 25px
 	&__inner
 	&__title
 		max-width: 800px
@@ -437,11 +547,15 @@
 		letter-spacing: .02em
 		text-transform: uppercase
 		color: #131c27
+		+xs
+			font-size: 26px
 	&__descr
 		p
 			line-height: 24px
 		p + p
 			margin-top: 25px
+			+sm
+				margin-top: 15px
 			
 /*
 	----------------------------------- */
@@ -458,6 +572,10 @@
 		.no-touch &:hover
 			color: $yellow
 	&_footer
+		+sm
+			display: flex
+			align-items: center
+			flex-direction: column
 	&_footer #{$parent}__num
 		color: $white
 		line-height: 29px

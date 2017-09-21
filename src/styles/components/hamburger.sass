@@ -1,0 +1,58 @@
+.nav-toggle
+	position: relative
+	display: none
+	padding-right: 50px
+	+r(1023)
+		display: block
+	&__text
+		color: #b0e2fa
+.nav-toggle__btn
+	position: absolute
+	z-index: 200
+	top: -4px
+	right: 0
+	margin: 0
+	padding: 0
+	width: 40px
+	height: 32px
+	font-size: 0
+	box-shadow: none
+	border: none
+	cursor: pointer
+	transition: background 0.3s
+	backface-visibility: hidden
+	-webkit-tap-highlight-color: transparent
+	span
+		display: block
+		position: absolute
+		top: 13px
+		left: 2px
+		right: 2px
+		height: 4px
+		background: #b0e2fa
+		transition: background 0s 0.3s
+		&::after, &::before
+			position: absolute
+			display: block
+			left: 0
+			width: 100%
+			height: 4px
+			background-color: #b0e2fa
+			content: ""
+		&::before
+			top: -10px
+			transition: top 0.3s ease 0.3s, transform 0.3s ease 0s
+		&::after
+			bottom: -10px
+			transition: bottom 0.3s ease 0.3s, transform 0.3s ease 0s
+	&.is-active
+		span
+			background: none
+			&::before
+				top: 0
+				transform: rotate(45deg)
+				transition: top 0.3s ease 0s, transform 0.3s ease 0.3s
+			&::after
+				bottom: 0
+				transform: rotate(-45deg)
+				transition: bottom 0.3s ease 0s, transform 0.3s ease 0.3s

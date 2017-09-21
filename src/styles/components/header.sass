@@ -2,6 +2,8 @@
 	&__menu
 		padding: 13px 0
 		background-color: #131c27
+		+sm
+			padding: 15px 0
 	&__container
 		display: flex
 		max-width: 1140px
@@ -11,6 +13,8 @@
 		align-items: center
 		font-size: 16px
 		color: $aqua-blue
+		+sm
+			order: -1
 		.no-touch &:hover span
 			border-bottom-color: $yellow
 			color: $yellow
@@ -26,6 +30,10 @@
 			+trs
 	&__search
 		max-width: 250px
+		+sm
+			max-width: none
+		+mob-xs
+			width: 100%
 		&-form
 			position: relative
 		input
@@ -55,20 +63,53 @@
 			max-width: 1140px
 			+lg
 				padding: 30px 15px 35px
+			+sm
+				padding: 20px 15px 10px
+			+xs
+				padding: 20px 15px 15px
 		&-inner
 			margin: 0 -15px
 			+justify
 			+lg
 				margin: 0 -10px
+			+sm
+				display: flex
+				flex-wrap: wrap
+				&::after
+					display: none
+			+mob-xs
+				flex-direction: column
+				margin: 0
 		&-col
 			display: inline-block
 			vertical-align: middle
 			padding: 0 15px
 			+lg
 				padding: 0 10px
+			+sm
+				display: flex
+				justify-content: center
+				align-items: center
+				flex: 1 1 50%
+				text-align: center
+				text-align-last: center
+				margin-bottom: 15px
+			+mob-xs
+				padding: 0
+				margin-bottom: 10px
+				&:last-child
+					margin-bottom: 0
 			&:nth-child(1)
 				+lg
 					width: 30%
+				+sm
+					order: 0
+				+mob-xs
+					width: 100%
+			&:nth-child(3)
+				order: 2
+			&:nth-child(4)
+				order: 3
 	&__logo
 		display: block
 	&__basket
@@ -128,13 +169,26 @@
 	 =================================== */
 .nav
 	$parent: &
+	&.is-active
+		opacity: 1
+		visibility: visible
 	&__list
 		display: flex
+		+sm
+			flex-direction: column
+			justify-content: center
+			height: 100%
+			overflow: auto
 		li
+			+sm
+				text-align: center
 			&:not(:first-child)
 				margin-left: 33px
 				+lg
 					margin-left: 21px
+				+sm
+					margin-left: 0
+					margin-top: 30px
 			&.is-active a
 				pointer-events: none
 				color: $yellow
@@ -142,9 +196,27 @@
 				color: $white
 				font-size: 15px
 				+trs
+				+sm
+					display: block
+					padding: 4px 0
+					font-size: 18px
 				.no-touch &:hover
 					color: $yellow
+	&_header
+		+sm
+			position: fixed
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 100
+			visibility: hidden
+			opacity: 0
+			background: #131c27
+			+trs
 	&_footer
+		+sm
+			display: none
 		li
 			&.is-active a
 				border-bottom-color: rgba($yellow, .5)

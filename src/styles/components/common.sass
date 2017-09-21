@@ -4,6 +4,8 @@ body
 	min-width: 320px
 	color: $gray
 	+f('bp400', 16, 22)
+	&.is-locked
+		overflow: hidden
 
 // selection
 h1, h2, h3, h4, h5, h6, p, a, span, div, img, mark, ul, li
@@ -36,6 +38,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, img, mark, ul, li
 		z-index: -1
 		content: ''
 		background: url('../img/bg/page-bg.jpg')
+		
 	&__container
 		box-shadow: 0 0 10px rgba($blue-dark, .3)
 		background: $white
@@ -57,6 +60,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, img, mark, ul, li
 	transition: all 0.1s cubic-bezier(0.4, 0, 1, 1)
 	+f('bp700', 15)
 	text-transform: uppercase
+	border: 0
 	&_yellow
 		background: $yellow linear-gradient(to top, rgba(225, 156, 0, 0) 0%, rgba(225, 156, 0, 0.15) 100%)
 		color: $black
@@ -66,6 +70,9 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, img, mark, ul, li
 	.no-touch &:active
 		transform: translate(2px, 2px)
 		box-shadow: none
+		
+input.btn
+	border-radius: 10px
 
 .title-bg
 	position: relative

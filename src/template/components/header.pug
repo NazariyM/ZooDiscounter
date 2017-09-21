@@ -1,7 +1,11 @@
 +b.HEADER.header
 	+e.menu
 		+e.container.container
-			+b.NAV.nav
+			+b.nav-toggle
+				+e.text Меню
+				+e.btn.js-nav-btn
+					span
+			+b.NAV.nav._header.js-nav
 				+e.UL.list
 					-
 						navList = [

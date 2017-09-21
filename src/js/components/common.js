@@ -1,7 +1,8 @@
 import './noTouch';
 import { Selectric } from './selectInit';
+import { Nav } from './nav';
+import { Filter } from './filter';
 import CTabs from './c-tabs';
-import Dot from './initDot';
 import objectFitImages from 'object-fit-images';
 import ionRangeSlider from 'ion-rangeslider';
 
@@ -37,9 +38,7 @@ export class Common {
    */
   init() {
     console.log(this.messages.init);
-
     this.test();
-    Dot.init();
     objectFitImages();
   }
 }

@@ -2,6 +2,10 @@
 	position: relative
 	padding: 42px 0
 	background: $blue-dark
+	+md
+		padding: 30px 0
+	+sm
+		padding: 25px 0 20px
 	&::after
 		position: absolute
 		z-index: -1
@@ -13,6 +17,8 @@
 		border-width: 0 0 110px 50vw
 		border-color: transparent transparent #0a141f transparent
 		content: ''
+		+md
+			display: none
 	&__container
 		max-width: 1140px
 		padding: 0 15px
@@ -20,14 +26,44 @@
 		display: flex
 		align-items: flex-end
 		margin-top: 18px
+		+sm
+			margin-top: 0
+			flex-wrap: wrap
+			align-items: flex-start
+		+mob-xs
+			flex-direction: column
+			align-items: center
 		&-col
 			flex: 1 1 auto
+			+sm
+				flex: 1 1 50%
+				margin-bottom: 20px
+				text-align: center
+			+mob-xs
+				flex: 1 0 auto
 			&:not(:last-child)
 				padding-right: 40px
+				+md
+					padding-right: 20px
+				+sm
+					padding-right: 0
 			&:nth-child(1)
 				flex-shrink: 0
+			&:nth-child(2),
+			&:nth-child(3)
+				+sm
+					order: 2
+					margin-bottom: 0
 			&:nth-child(4)
 				flex-shrink: 0
+			&:nth-child(5)
+				+sm
+					display: none
+				+mob-xs
+					display: block
+					order: 10
+					margin-top: 10px
+					margin-bottom: 0
 		&-title
 			color: rgba($white, .5)
 			+f('bp700', 15, 25)
@@ -79,6 +115,8 @@
 .socials
 	display: flex
 	align-items: center
+	+sm
+		justify-content: center
 	&__link
 		display: inline-flex
 		align-items: center
@@ -119,6 +157,8 @@
 .pay-method
 	display: flex
 	align-items: center
+	+sm
+		justify-content: center
 	&__item
 		position: relative
 		display: inline-flex
